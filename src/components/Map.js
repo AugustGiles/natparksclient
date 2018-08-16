@@ -13,7 +13,7 @@ import {
 
   import "../css/Map.css";
   import {parks} from "../data/Parks";
-  import {states} from "../data/States";
+  import {states, selectedStyle, defaultStyle, stateStyles} from "../data/States";
 
 
 
@@ -23,13 +23,33 @@ class Map extends Component {
     this.state = {
       center: [ -97, 40 ],
       zoom: 1,
-      selectedState: null
+      selectedState: null,
+      stateStyles: stateStyles
     }
   }
 
-  handleStateClick = (state) =>{
-    let stateView = states[state]
-    this.setState({...stateView, selectedState:state})
+  handleStateClick = (stateName) =>{
+    // find previously clicked state if exists
+    if (this.state.selectedState) {
+      let stateStylesCopy = {...this.state.stateStyles}
+      stateStylesCopy[this.state.selectedState] = defaultStyle
+      stateStylesCopy[stateName] = selectedStyle
+      this.setState({
+        selectedState: stateName,
+        stateStyles: stateStylesCopy,
+        ...states[stateName]
+      })
+    }
+    // No previous state
+    else{
+      let stateStylesCopy = {...this.state.stateStyles}
+      stateStylesCopy[stateName] = selectedStyle
+      this.setState({
+        selectedState: stateName,
+        stateStyles: stateStylesCopy,
+        ...states[stateName]
+      })
+    }
   }
     
     render() { 
@@ -48,9 +68,9 @@ class Map extends Component {
           }}
           >
           {({zoom,x,y}) => (
-                 <ComposableMap
+          <ComposableMap
           projection={geoAlbersUsa}
-        projectionConfig={{ scale: 1000 }}
+          projectionConfig={{ scale: 1000 }}
           width={980}
           height={551}
           style={{
@@ -59,37 +79,20 @@ class Map extends Component {
           }}
           >
           <ZoomableGroup center={[x,y]} zoom={zoom} disablePanning>
-                        <Geographies  geography='/gadm36_USA.json'>
-                        {(geographies, projection) =>
-                             geographies.map((geography, i) =>{
+                        <Geographies disableOptimization={true} geography='/gadm36_USA.json'>
+                        {(geographies, projection) => {
+                             let geos = geographies.map((geography, i) =>{
+                               let stateName = geography.properties.VARNAME_1.slice(0,2)
                              return <Geography
-                                onClick={()=>this.handleStateClick(geography.properties.VARNAME_1.slice(0,2))}
-                                key={i}
+                                onClick={()=>this.handleStateClick(stateName)}
+                                key={stateName}
                                 geography={geography}
                                 projection={projection}
-                                style={{
-                                  default: {
-                                    fill: "#ECEFF1",
-                                    stroke: "#607D8B",
-                                    strokeWidth: 0.75,
-                                    outline: "none",
-                                  },
-                                  hover: {
-                                    fill: "#CFD8DC",
-                                    stroke: "#607D8B",
-                                    strokeWidth: 1,
-                                    outline: "none",
-                                  },
-                                  pressed: {
-                                    fill: "#FF5722",
-                                    stroke: "#607D8B",
-                                    strokeWidth: 1,
-                                    outline: "none",
-                                  }
-                                }}
+                                style={this.state.stateStyles[stateName]}
                               />}
                             )
-                        }
+                            return geos
+                        }}
                         </Geographies>
                         <Markers>
                         <Marker

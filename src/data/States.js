@@ -205,3 +205,1067 @@ export const states = {
     },
 }
 
+export const stateStyles = {
+    AL:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    AK:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    AZ:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    AR:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    CA:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    CO:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    CT:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    DE:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    FL:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    GA:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    HI:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    ID:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    IL:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    IN:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    IA:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    KS:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    KY:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    LA:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    ME:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    MD:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    MA:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    MI:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    MN:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    MS:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    MO:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    MT:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    NE:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    NV:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    NH:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    NJ:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    NM:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    NY:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    NC:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    ND:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    OH:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    OK:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    OR:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    PA:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    RI:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    SC:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    SD:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    TN:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    TX:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    UT:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    VT:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    VA:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    WA:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    WV:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    WI:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    WY:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+    DC:{
+        default: {
+            fill: "#ECEFF1",
+            stroke: "#607D8B",
+            strokeWidth: 0.75,
+            outline: "none",
+          },
+          hover: {
+            fill: "#CFD8DC",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          },
+          pressed: {
+            fill: "#FF5722",
+            stroke: "#607D8B",
+            strokeWidth: 1,
+            outline: "none",
+          }
+    },
+}
+
+export const defaultStyle = {
+    default: {
+        fill: "#ECEFF1",
+        stroke: "#607D8B",
+        strokeWidth: 0.75,
+        outline: "none",
+      },
+      hover: {
+        fill: "#CFD8DC",
+        stroke: "#607D8B",
+        strokeWidth: 1,
+        outline: "none",
+      },
+      pressed: {
+        fill: "#FF5722",
+        stroke: "#607D8B",
+        strokeWidth: 1,
+        outline: "none",
+      }
+}
+
+export const selectedStyle = {
+    default: {
+        fill: "#FF5722",
+        stroke: "#607D8B",
+        strokeWidth: 1,
+        outline: "none",
+      },
+      hover: {
+        fill: "#FF5722",
+        stroke: "#607D8B",
+        strokeWidth: 1,
+        outline: "none",
+      },
+      pressed: {
+        fill: "#FF5722",
+        stroke: "#607D8B",
+        strokeWidth: 1,
+        outline: "none",
+      }
+}
