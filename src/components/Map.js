@@ -9,17 +9,45 @@ import {
   } from "react-simple-maps"
 
   import {geoAlbersUsa} from "d3-geo";
+  import { Motion, spring } from "react-motion";
 
   import "../css/Map.css";
-  import parks from "../data/Parks";
+  import {parks} from "../data/Parks";
+  import {states} from "../data/States";
 
 
 
 class Map extends Component {
+  constructor() {
+    super()
+    this.state = {
+      center: [ -97, 40 ],
+      zoom: 1,
+      selectedState: null
+    }
+  }
+
+  handleStateClick = (state) =>{
+    let stateView = states[state]
+    this.setState({...stateView, selectedState:state})
+  }
     
     render() { 
         return (
             <div className="map-container">
+            <Motion
+          defaultStyle={{
+            zoom: 1,
+            x: -97,
+            y: 40,
+          }}
+          style={{
+            zoom: spring(this.state.zoom, {stiffness: 210, damping: 20}),
+            x: spring(this.state.center[0], {stiffness: 210, damping: 20}),
+            y: spring(this.state.center[1], {stiffness: 210, damping: 20}),
+          }}
+          >
+          {({zoom,x,y}) => (
                  <ComposableMap
           projection={geoAlbersUsa}
         projectionConfig={{ scale: 1000 }}
@@ -30,11 +58,12 @@ class Map extends Component {
             height: "auto",
           }}
           >
-          <ZoomableGroup center={[ -97, 40 ]} disablePanning>
+          <ZoomableGroup center={[x,y]} zoom={zoom} disablePanning>
                         <Geographies  geography='/gadm36_USA.json'>
                         {(geographies, projection) =>
-                             geographies.map((geography, i) =>
-                             <Geography
+                             geographies.map((geography, i) =>{
+                             return <Geography
+                                onClick={()=>this.handleStateClick(geography.properties.VARNAME_1.slice(0,2))}
                                 key={i}
                                 geography={geography}
                                 projection={projection}
@@ -58,7 +87,7 @@ class Map extends Component {
                                     outline: "none",
                                   }
                                 }}
-                              />
+                              />}
                             )
                         }
                         </Geographies>
@@ -86,6 +115,8 @@ class Map extends Component {
                         </Markers>
                     </ZoomableGroup>
                 </ComposableMap>
+                )}
+                </Motion>
             </div>
           );
     }

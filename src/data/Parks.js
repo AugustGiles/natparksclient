@@ -1,4 +1,4 @@
-const parks = 
+export const parks = 
     {
         "total": 5,
         "data": [
