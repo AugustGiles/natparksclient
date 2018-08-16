@@ -7,7 +7,9 @@
     "react-dom": "^16.4.2",
     "react-motion": "^0.5.2",
     "react-scripts": "1.1.4",
-    "react-simple-maps": "^0.12.1"
+    "react-simple-maps": "^0.12.1",
+    "semantic-ui-css": "^2.3.3",
+    "semantic-ui-react": "^0.82.2"
   },
   "scripts": {
     "start": "react-scripts start",

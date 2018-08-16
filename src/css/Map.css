@@ -1,4 +1,6 @@
+
 .map-container {
+    position: relative;
     width: "100%";
     max-width: 1500px;
     margin: 0 auto;
@@ -6,5 +8,10 @@
 
 path {
     outline: none;
+}
 
+#fab {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
 }

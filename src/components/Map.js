@@ -8,6 +8,8 @@ import {
     Marker,
   } from "react-simple-maps"
 
+  import { Button } from "semantic-ui-react";
+
   import {geoAlbersUsa} from "d3-geo";
   import { Motion, spring } from "react-motion";
 
@@ -26,6 +28,15 @@ class Map extends Component {
       selectedState: null,
       stateStyles: stateStyles
     }
+  }
+
+  resetMap = () => {
+    this.setState({
+      center: [ -97, 40 ],
+      zoom: 1,
+      selectedState: null,
+      stateStyles: stateStyles
+    })
   }
 
   handleStateClick = (stateName) =>{
@@ -55,6 +66,7 @@ class Map extends Component {
     render() { 
         return (
             <div className="map-container">
+            
             <Motion
           defaultStyle={{
             zoom: 1,
@@ -120,6 +132,7 @@ class Map extends Component {
                 </ComposableMap>
                 )}
                 </Motion>
+                <Button id="fab" circular icon="search minus" size="massive" color="blue" onClick={this.resetMap}/>
             </div>
           );
     }

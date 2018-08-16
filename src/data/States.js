@@ -1,206 +1,206 @@
 export const states = {
     AL:{
-        zoom: 2,
-        center:[-91,32]
+        zoom: 5,
+        center:[-87,33]
     },
     AK:{
-        zoom: 2,
-        center: [-159,65]
+        zoom: 4,
+        center: [-159,64]
     },
     AZ:{
-        zoom: 2,
+        zoom: 3,
         center: [-111,34]
     },
     AR:{
-        zoom: 2,
-        center: [-92,34]
+        zoom: 5,
+        center: [-92,35]
     },
     CA:{
-        zoom: 2,
-        center: [-119,36]
+        zoom: 2.5,
+        center: [-119,37.5]
     },
     CO:{
-        zoom: 2,
+        zoom: 4,
         center: [-105,39]
     },
     CT:{
-        zoom: 2,
-        center: [-72,41]
+        zoom: 10,
+        center: [-72.5,41.5]
     },
     DE:{
-        zoom: 2,
-        center: [-75,38]
+        zoom: 11,
+        center: [-75.5,39]
     },
     FL:{
-        zoom: 2,
-        center: [-81,28]
+        zoom: 4.5,
+        center: [-83,28.5]
     },
     GA:{
-        zoom: 2,
-        center: [-83,32]
+        zoom: 5,
+        center: [-84,33]
     },
     HI:{
-        zoom: 2,
-        center: [-156,20]
+        zoom: 6,
+        center: [-157,21]
     },
     ID:{
-        zoom: 2,
-        center: [-114,44]
+        zoom: 3,
+        center: [-114,45]
     },
     IL:{
-        zoom: 2,
-        center: [-88,40]
+        zoom: 4,
+        center: [-88.5,40]
     },
     IN:{
-        zoom: 2,
-        center: [-86,31]
+        zoom: 5,
+        center: [-86,39.5]
     },
     IA:{
-        zoom: 2,
+        zoom: 5,
         center: [-93,42]
     },
     KS:{
-        zoom: 2,
-        center: [-98,38]
+        zoom: 5,
+        center: [-98,38.5]
     },
     KY:{
-        zoom: 2,
-        center: [-85,37]
+        zoom: 5,
+        center: [-85,37.5]
     },
     LA:{
-        zoom: 2,
+        zoom: 5,
         center: [-92,31]
     },
     ME:{
-        zoom: 2,
-        center: [-69,45]
+        zoom: 5,
+        center: [-70,45]
     },
     MD:{
-        zoom: 2,
-        center: [-76,39]
+        zoom: 7,
+        center: [-77,39]
     },
     MA:{
-        zoom: 2,
-        center: [-71,42]
+        zoom: 9,
+        center: [-72.5,42]
     },
     MI:{
-        zoom: 2,
-        center: [-84,44]
+        zoom: 4,
+        center: [-85.5,45]
     },
     MN:{
-        zoom: 2,
+        zoom: 4,
         center: [-94,46]
     },
     MS:{
-        zoom: 2,
-        center: [-89,32]
+        zoom: 4,
+        center: [-89.5,33]
     },
     MO:{
-        zoom: 2,
+        zoom: 4,
         center: [-92,38]
     },
     MT:{
-        zoom: 2,
-        center: [-109,46]
+        zoom: 4,
+        center: [-109,47]
     },
     NE:{
-        zoom: 2,
-        center: [-104,41]
+        zoom: 5,
+        center: [-101,41]
     },
     NV:{
-        zoom: 2,
+        zoom: 3,
         center: [-116,39]
     },
     NH:{
-        zoom: 2,
-        center: [-71,43]
+        zoom: 7,
+        center: [-71,44]
     },
     NJ:{
-        zoom: 2,
-        center: [-74,40]
+        zoom: 7,
+        center: [-75,40]
     },
     NM:{
-        zoom: 2,
+        zoom: 3.5,
         center: [-106,34]
     },
     NY:{
-        zoom: 2,
+        zoom: 4,
         center: [-75,43]
     },
     NC:{
-        zoom: 2,
-        center: [-78,35]
+        zoom: 4,
+        center: [-80,35]
     },
     ND:{
-        zoom: 2,
+        zoom: 4,
         center: [-100,47]
     },
     OH:{
-        zoom: 2,
+        zoom: 4,
         center: [-82,40]
     },
     OK:{
-        zoom: 2,
+        zoom: 4,
         center: [-97,35]
     },
     OR:{
-        zoom: 2,
+        zoom: 4,
         center: [-120,44]
     },
     PA:{
-        zoom: 2,
+        zoom: 5,
         center: [-77,41]
     },
     RI:{
-        zoom: 2,
-        center: [-71,41]
+        zoom: 12,
+        center: [-72,42]
     },
     SC:{
-        zoom: 2,
-        center: [-80,33]
+        zoom: 5,
+        center: [-81,34]
     },
     SD:{
-        zoom: 2,
+        zoom: 4,
         center: [-100,44]
     },
     TN:{
-        zoom: 2,
-        center: [-86,35]
+        zoom: 5,
+        center: [-86,36]
     },
     TX:{
-        zoom: 2,
-        center: [-99,31]
+        zoom: 2.5,
+        center: [-99,31.5]
     },
     UT:{
-        zoom: 2,
-        center: [-111,39]
+        zoom: 4,
+        center: [-112,39.5]
     },
     VT:{
-        zoom: 2,
+        zoom: 7,
         center: [-72,44]
     },
     VA:{
-        zoom: 2,
-        center: [-78,37]
+        zoom: 5,
+        center: [-80,38]
     },
     WA:{
-        zoom: 2,
+        zoom: 4,
         center: [-120,47]
     },
     WV:{
-        zoom: 2,
-        center: [-80,38]
+        zoom: 6,
+        center: [-80,39]
     },
     WI:{
-        zoom: 2,
-        center: [-89,44]
+        zoom: 4,
+        center: [-89,44.5]
     },
     WY:{
-        zoom: 2,
-        center: [-107,42]
+        zoom: 4,
+        center: [-107,43]
     },
     DC:{
-        zoom: 2,
+        zoom: 20,
         center: [-77,38.9]
     },
 }
