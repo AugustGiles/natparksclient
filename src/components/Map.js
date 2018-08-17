@@ -66,9 +66,9 @@ class Map extends Component {
 
   renderMarkers = () => {
     const {parkDataByState} = this.props
-    let currentParks = parkDataByState.find(state=>state.name===this.state.selectedState).parks
+    // let currentParks = parkDataByState.find(state=>state.name===this.state.selectedState).parks
     return (
-      currentParks.map(park =>{ 
+      parkDataByState.map(park =>{ 
           return this.renderMarker(park)
         }
       )
@@ -95,7 +95,7 @@ class Map extends Component {
               data-for={park.id}
               cx={0}
               cy={0}
-              r={5}
+              r={2}
               style={{
               stroke: "#2185d0",
               strokeWidth: 3,
@@ -107,10 +107,10 @@ class Map extends Component {
 
   renderTooltips = () => {
     const {parkDataByState} = this.props
-    let currentParks = parkDataByState.find(state=>state.name===this.state.selectedState).parks
+    // let currentParks = parkDataByState.find(state=>state.name===this.state.selectedState).parks
 
     return (
-      currentParks.map(park =>{ 
+      parkDataByState.map(park =>{ 
           return this.renderTooltip(park)
         }
       )
@@ -169,13 +169,13 @@ class Map extends Component {
                         }}
                         </Geographies>
                         <Markers>
-                          {this.state.selectedState && this.renderMarkers()}
+                          {this.props.parkDataByState.length!==0 && this.renderMarkers()}
                         </Markers>
                     </ZoomableGroup>
                 </ComposableMap>
                 )}
                 </Motion>
-                {this.state.selectedState && this.renderTooltips()}
+                {this.props.parkDataByState.length!==0 && this.renderTooltips()}
                 <Button id="fab" circular icon="search minus" size="massive" color="blue" onClick={this.resetMap}/>
             </div>
           );

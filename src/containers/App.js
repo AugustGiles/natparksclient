@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('https://still-wildwood-14519.herokuapp.com/states')
+    fetch('https://still-wildwood-14519.herokuapp.com/parks')
     .then(res=>res.json())
     .then(stateData=>this.setState({parkDataByState:stateData}))
   }
