@@ -10,11 +10,12 @@ import {
 
   import { Button } from "semantic-ui-react";
 
+  import ReactTooltip from "react-tooltip";
+
   import {geoAlbersUsa} from "d3-geo";
   import { Motion, spring } from "react-motion";
 
   import "../css/Map.css";
-  import {parks} from "../data/Parks";
   import {states, selectedStyle, defaultStyle, stateStyles} from "../data/States";
 
 
@@ -62,8 +63,69 @@ class Map extends Component {
       })
     }
   }
+
+  renderMarkers = () => {
+    const {parkDataByState} = this.props
+    let currentParks = parkDataByState.find(state=>state.name===this.state.selectedState).parks
+    return (
+      currentParks.map(park =>{ 
+          return this.renderMarker(park)
+        }
+      )
+    )
+  }
+
+  renderMarker = (park) => {
+    return <Marker
+          key = {`marker-${park.id}`}
+          onClick={()=>this.props.history.push(`/${park.id}`)}        
+          marker={{coordinates: 
+            [
+              parseFloat(park.coordinates[0]),
+              parseFloat(park.coordinates[1])
+            ]}}
+          style={{
+              default: { fill: "#2185d0" },
+              hover: { fill: "#FFFFFF" },
+              pressed: { fill: "#2185d0" },
+          }}
+          >
+          <circle 
+              data-tip
+              data-for={park.id}
+              cx={0}
+              cy={0}
+              r={5}
+              style={{
+              stroke: "#2185d0",
+              strokeWidth: 3,
+              opacity: 0.9,
+              }}
+          />
+        </Marker>
+  }
+
+  renderTooltips = () => {
+    const {parkDataByState} = this.props
+    let currentParks = parkDataByState.find(state=>state.name===this.state.selectedState).parks
+
+    return (
+      currentParks.map(park =>{ 
+          return this.renderTooltip(park)
+        }
+      )
+    )
+  }
+
+  renderTooltip = (park) => {
+    return (<ReactTooltip key={`tooltip-${park.id}`} id={park.id.toString()}>
+      <span>{park.full_name}</span>
+    </ReactTooltip>)
+  }
     
     render() { 
+
+      
         return (
             <div className="map-container">
             
@@ -107,31 +169,13 @@ class Map extends Component {
                         }}
                         </Geographies>
                         <Markers>
-                        <Marker
-                            
-                            marker={{coordinates: [-153.2917758, 67.75961636]}}
-                            style={{
-                                default: { fill: "#FF5722" },
-                                hover: { fill: "#FFFFFF" },
-                                pressed: { fill: "#FF5722" },
-                            }}
-                            >
-                            <circle
-                                cx={0}
-                                cy={0}
-                                r={5}
-                                style={{
-                                stroke: "#FF5722",
-                                strokeWidth: 3,
-                                opacity: 0.9,
-                                }}
-                            />
-                        </Marker>
+                          {this.state.selectedState && this.renderMarkers()}
                         </Markers>
                     </ZoomableGroup>
                 </ComposableMap>
                 )}
                 </Motion>
+                {this.state.selectedState && this.renderTooltips()}
                 <Button id="fab" circular icon="search minus" size="massive" color="blue" onClick={this.resetMap}/>
             </div>
           );
