@@ -21,7 +21,7 @@ class App extends Component {
       parkData: [],
       parkDesignation: "Park Designation",
       searchTerm: '',
-      sidebarVisible: true
+      sidebarVisible: true,
       loggedIn: false
     }
   }
