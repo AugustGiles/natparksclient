@@ -50,6 +50,7 @@ export default class NavBar extends Component {
     ]
 
     const { isLoading, value, results } = this.state
+    const {handleDesignationFilter, history} = this.props
 
     return (
       <Sticky className="NavBar">
@@ -68,13 +69,13 @@ export default class NavBar extends Component {
               text={this.props.parkDesignation}
               pointing className='link item'
               options={options}
-              onChange={ (e) => this.props.handleDesignationFilter(e)}
+              onChange={ (e) => handleDesignationFilter(e)}
               selectOnBlur={false}
             />
           {!this.props.loggedIn  ? 
             <Menu.Menu position='right'>
-              <Menu.Item >Login</Menu.Item>
-              <Menu.Item >Signup</Menu.Item>
+              <Menu.Item onClick={()=>history.push('/login')}>Login</Menu.Item>
+              <Menu.Item onClick={()=>history.push('/signup')} >Signup</Menu.Item>
             </Menu.Menu>
             :
               <Menu.Item position='right'>Logout</Menu.Item>
