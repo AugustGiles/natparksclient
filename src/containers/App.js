@@ -21,7 +21,7 @@ class App extends Component {
       parkData: [],
       parkDesignation: "Park Designation",
       searchTerm: '',
-      sidebarVisible: true,
+      sidebarVisible: false,
       loggedIn: false
     }
   }
@@ -44,6 +44,10 @@ class App extends Component {
 
   handleUserLogin = (userInfo) => {
     console.log(userInfo)
+  }
+
+  handleExtendSidebar = () => {
+    this.setState({sidebarVisible: !this.state.sidebarVisible})
   }
 
   filterParks = () => {
@@ -84,6 +88,7 @@ class App extends Component {
                   handleSearch={this.handleSearch}
                   parkData={this.state.parkData}
                   loggedIn={this.state.loggedIn}
+                  handleExtendSidebar={this.handleExtendSidebar}
                   {...routerProps}
                 />
                 <Map
@@ -101,12 +106,12 @@ class App extends Component {
         }/>
         <Switch>
           <Route exact path="/signup" render={routerProps =>
-            <Modal size="fullscreen" open closeIcon onClose={this.handleClose}>
+            <Modal size="tiny" open closeIcon onClose={this.handleClose}>
               <AuthForm formType="signup" onSubmitHandler={this.handleUserSignup}/>
             </Modal>
           } />
           <Route exact path="/login" render={routerProps =>
-            <Modal size="fullscreen" open closeIcon onClose={this.handleClose}>
+            <Modal size="tiny" open closeIcon onClose={this.handleClose}>
               <AuthForm formType="login" onSubmitHandler={this.handleUserLogin}/>
             </Modal>
           } />

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Form, Modal } from "semantic-ui-react";
 
 class AuthForm extends Component {
-    state = { 
+    state = {
         username: "",
         password: ""
      }
@@ -18,21 +18,21 @@ class AuthForm extends Component {
         this.props.onSubmitHandler(this.state)
     }
 
-    render() { 
+    render() {
         const {formType} = this.props
-        return ( 
+        return (
             <React.Fragment >
                 <Modal.Header>{formType==="login"?"Login":"Sign Up"}</Modal.Header>
                 <Modal.Content >
                     <Form>
                         <Form.Field>
                             <label>Username</label>
-                            <input value={this.state.username} placeholder='Username' 
+                            <input value={this.state.username} placeholder='Username'
                                     onChange={this.handleChange} name="username" />
                         </Form.Field>
                         <Form.Field>
-                            <label>Username</label>
-                            <input value={this.state.password} placeholder='Password' 
+                            <label>Password</label>
+                            <input value={this.state.password} placeholder='Password'
                                     onChange={this.handleChange} name="password" type="password"/>
                         </Form.Field>
                         <Form.Button onClick={this.handleSubmit}>{formType==="login"?"Login":"Sign Up"}</Form.Button>
@@ -42,5 +42,5 @@ class AuthForm extends Component {
          );
     }
 }
- 
+
 export default AuthForm;

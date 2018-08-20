@@ -79,7 +79,14 @@ export default class NavBar extends Component {
               <Menu.Item onClick={()=>history.push('/signup')} >Signup</Menu.Item>
             </Menu.Menu>
             :
-              <Menu.Item position='right'>Logout</Menu.Item>
+            <Menu.Menu position='right'>
+              <Menu.Item
+                onClick = {() => {this.props.handleExtendSidebar()}
+              }>
+                My Info
+              </Menu.Item>
+              <Menu.Item>Logout</Menu.Item>
+            </Menu.Menu>
           }
         </Menu>
       </Sticky>
