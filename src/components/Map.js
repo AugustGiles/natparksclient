@@ -74,7 +74,7 @@ class Map extends Component {
   renderMarkers = () => {
     const {parkData} = this.props
     return (
-      parkData.map(park =>{ 
+      parkData.map(park =>{
           return this.renderMarker(park)
         }
       )
