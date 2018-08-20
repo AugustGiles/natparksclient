@@ -68,7 +68,7 @@ class Map extends Component {
     const {parkDataByState} = this.props
     // let currentParks = parkDataByState.find(state=>state.name===this.state.selectedState).parks
     return (
-      parkDataByState.map(park =>{ 
+      parkDataByState.map(park =>{
           return this.renderMarker(park)
         }
       )
@@ -78,8 +78,8 @@ class Map extends Component {
   renderMarker = (park) => {
     return <Marker
           key = {`marker-${park.id}`}
-          onClick={()=>this.props.history.push(`/${park.id}`)}        
-          marker={{coordinates: 
+          onClick={()=>this.props.history.push(`/${park.id}`)}
+          marker={{coordinates:
             [
               parseFloat(park.coordinates[0]),
               parseFloat(park.coordinates[1])
@@ -90,7 +90,7 @@ class Map extends Component {
               pressed: { fill: "#2185d0" },
           }}
           >
-          <circle 
+          <circle
               data-tip
               data-for={park.id}
               cx={0}
@@ -110,7 +110,7 @@ class Map extends Component {
     // let currentParks = parkDataByState.find(state=>state.name===this.state.selectedState).parks
 
     return (
-      parkDataByState.map(park =>{ 
+      parkDataByState.map(park =>{
           return this.renderTooltip(park)
         }
       )
@@ -122,13 +122,13 @@ class Map extends Component {
       <span>{park.full_name}</span>
     </ReactTooltip>)
   }
-    
-    render() { 
 
-      
+    render() {
+
+
         return (
             <div className="map-container">
-            
+
             <Motion
           defaultStyle={{
             zoom: 1,
@@ -181,5 +181,5 @@ class Map extends Component {
           );
     }
 }
- 
+
 export default Map;

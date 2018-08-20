@@ -1255,17 +1255,20 @@ export const selectedStyle = {
         stroke: "#607D8B",
         strokeWidth: 1,
         outline: "none",
+        // opacity: 0.8,
       },
       hover: {
         fill: "#FF5722",
         stroke: "#607D8B",
         strokeWidth: 1,
         outline: "none",
+        // opacity: 0.8,
       },
       pressed: {
         fill: "#FF5722",
         stroke: "#607D8B",
         strokeWidth: 1,
         outline: "none",
+        // opacity: 0.8,
       }
 }
