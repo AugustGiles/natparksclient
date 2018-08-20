@@ -44,6 +44,30 @@ class App extends Component {
     console.log(userInfo)
   }
 
+  filterParks = () => {
+    switch (this.state.parkDesignation) {
+      case "National Park":
+        return this.state.parkData.filter(park=>park.designation.includes("National Park"))
+      case "National Monument":
+        return this.state.parkData.filter(park=>park.designation.includes("Monument"))
+      case "National Historic Site":
+        return this.state.parkData.filter(park=>park.designation.includes("Historic Site"))
+      case "National Seashore":
+        return this.state.parkData.filter(park=>park.designation.includes("Seashore"))
+      case "National Preserve":
+        return this.state.parkData.filter(park=>park.designation.includes("Preserve"))
+      case "National Heritage Area":
+        return this.state.parkData.filter(park=>park.designation.includes("Heritage"))
+      case "National Scenic Riverway":
+        return this.state.parkData.filter(park=>park.designation.includes("River"))
+      case "National Battlefield/Military Park":
+        return this.state.parkData.filter(park=>{return park.designation.match(/Battlefield|Military/)})
+      case "National Recreation Area":
+        return this.state.parkData.filter(park=>park.designation.includes("Recreation"))
+      default:
+        return this.state.parkData
+    }
+  }
   handleSearch = (e) => {
     this.setState({searchTerm: e.target.value})
   }
@@ -59,13 +83,13 @@ class App extends Component {
       <div className="App">
         <Route path="/" render={routerProps =>
             <React.Fragment>
-                <NavBar
-                  handleDesignationFilter={this.handleDesignationFilter}
-                  parkDesignation={this.state.parkDesignation}
-                  handleSearch={this.handleSearch}
-                />
-                <Map {...routerProps} parkData={this.state.parkData}/>
-                <SideBar />
+              <NavBar
+                handleDesignationFilter={this.handleDesignationFilter}
+                parkDesignation={this.state.parkDesignation}
+                handleSearch={this.handleSearch}
+              />
+              <Map {...routerProps} parkData={this.filterParks()}/>
+              <SideBar />
             </React.Fragment>
         }/>
         <Switch>
@@ -86,8 +110,8 @@ class App extends Component {
           }/>
         </Switch>
       </div>
-    );
+    )
   }
 }
 
-export default withRouter(App);
+export default withRouter(App)
