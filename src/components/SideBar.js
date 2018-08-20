@@ -5,7 +5,7 @@ import "../css/SideBar.css";
 export default class SideBar extends Component {
   render() {
     return (
-      <Segment className="SideBar" inverted basic>
+      <Segment className="SideBar" basic>
         <Header as='h2'>Hey (Whoever)</Header>
         <Divider section inverted/>
         <Header as='h3'>Your Saved Parks</Header>

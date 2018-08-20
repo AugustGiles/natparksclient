@@ -1,4 +1,6 @@
 .NavBar {
   height: 10%;
-  width:102.85%; /* fudgy */
+  width:100%; /* fudgy */
+  background-color: white;
 }
+

@@ -76,8 +76,8 @@ class App extends Component {
     return (
       <div className="App">
         <Route path="/" render={routerProps =>
-            <Grid className="view">
-              <Grid.Column width={this.state.sidebarVisible ? 12 : 16} >
+            <Grid  className="view">
+              <Grid.Column style={{paddingRight:"0", backgroundColor:"lightgrey"}}  width={this.state.sidebarVisible ? 12 : 16} >
                 <NavBar
                   handleDesignationFilter={this.handleDesignationFilter}
                   parkDesignation={this.state.parkDesignation}
@@ -93,7 +93,7 @@ class App extends Component {
                 />
               </Grid.Column>
               {this.state.sidebarVisible &&
-                <Grid.Column width={4} >
+                <Grid.Column width={4} style={{paddingLeft:"0"}}>
                   <SideBar />
                 </Grid.Column>
               }
