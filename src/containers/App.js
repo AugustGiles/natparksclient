@@ -20,7 +20,8 @@ class App extends Component {
     this.state = {
       parkData: [],
       parkDesignation: "Park Designation",
-      searchTerm: ''
+      searchTerm: '',
+      loggedIn: false
     }
   }
 
@@ -89,6 +90,7 @@ class App extends Component {
                 parkDesignation={this.state.parkDesignation}
                 focusPark={this.focusPark}
                 parkData={this.state.parkData}
+                loggedIn={this.state.loggedIn}
                 {...routerProps}
               />
               <Map {...routerProps} parkData={this.filterParks()}/>

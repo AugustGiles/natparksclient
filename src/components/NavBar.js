@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu, Sticky, Input, Dropdown, Search } from 'semantic-ui-react'
+import { Menu, Sticky, Dropdown, Search } from 'semantic-ui-react'
 
 export default class NavBar extends Component {
   state = {
@@ -71,7 +71,14 @@ export default class NavBar extends Component {
               onChange={ (e) => this.props.handleDesignationFilter(e)}
               selectOnBlur={false}
             />
-          <Menu.Item position='right'>Login</Menu.Item>
+          {!this.props.loggedIn  ? 
+            <Menu.Menu position='right'>
+              <Menu.Item >Login</Menu.Item>
+              <Menu.Item >Signup</Menu.Item>
+            </Menu.Menu>
+            :
+              <Menu.Item position='right'>Logout</Menu.Item>
+          }
         </Menu>
       </Sticky>
 
