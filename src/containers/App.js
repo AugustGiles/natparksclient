@@ -68,15 +68,16 @@ class App extends Component {
         return this.state.parkData
     }
   }
-  handleSearch = (e) => {
-    this.setState({searchTerm: e.target.value})
-  }
+  // handleSearch = (e) => {
+  //   this.setState({searchTerm: e.target.value})
+  // }
 
-  filterBySearchTerm = () => {
-    return this.state.parkData.filter(park => {
-      return park.name.includes(this.state.searchTerm)
-    })
-  }
+  // filterBySearchTerm = () => {
+  //   return this.state.parkData.filter(park => {
+  //     return park.name.includes(this.state.searchTerm)
+  //   })
+  // }
+
 
   render() {
     return (
@@ -86,7 +87,9 @@ class App extends Component {
               <NavBar
                 handleDesignationFilter={this.handleDesignationFilter}
                 parkDesignation={this.state.parkDesignation}
-                handleSearch={this.handleSearch}
+                focusPark={this.focusPark}
+                parkData={this.state.parkData}
+                {...routerProps}
               />
               <Map {...routerProps} parkData={this.filterParks()}/>
               <SideBar />
