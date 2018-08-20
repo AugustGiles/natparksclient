@@ -23,7 +23,10 @@ export default class NavBar extends Component {
         <Menu size='massive'>
           <Menu.Item header>Parks Map</Menu.Item>
           <Menu.Item>
-            <Input placeholder='Search Parks...' />
+            <Input
+              placeholder='Search Parks...'
+              onChange={(e) => this.props.handleSearch(e)}
+            />
           </Menu.Item>
             <Dropdown
               text={this.props.parkDesignation}

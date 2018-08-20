@@ -18,7 +18,8 @@ class App extends Component {
     super(props)
     this.state = {
       parkData: [],
-      parkDesignation: "Park Designation"
+      parkDesignation: "Park Designation",
+      searchTerm: ''
     }
   }
 
@@ -66,17 +67,25 @@ class App extends Component {
         return this.state.parkData
     }
   }
+  handleSearch = (e) => {
+    this.setState({searchTerm: e.target.value})
+  }
+
+  filterBySearchTerm = () => {
+    return this.state.parkData.filter(park => {
+      return park.name.includes(this.state.searchTerm)
+    })
+  }
 
   render() {
     return (
       <div className="App">
-
-
         <Route path="/" render={routerProps =>
             <React.Fragment>
               <NavBar
                 handleDesignationFilter={this.handleDesignationFilter}
                 parkDesignation={this.state.parkDesignation}
+                handleSearch={this.handleSearch}
               />
               <Map {...routerProps} parkData={this.filterParks()}/>
             </React.Fragment>
@@ -99,8 +108,8 @@ class App extends Component {
           }/>
         </Switch>
       </div>
-    );
+    )
   }
 }
 
-export default withRouter(App);
+export default withRouter(App)
