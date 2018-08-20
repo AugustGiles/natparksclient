@@ -31,6 +31,13 @@ class Map extends Component {
     }
   }
 
+  handleZoom = () => {
+    if(this.state.zoom === 1)
+      this.setState({zoom:2})
+    else
+      this.resetMap()
+  }
+
   resetMap = () => {
     this.setState({
       center: [ -97, 40 ],
@@ -65,10 +72,9 @@ class Map extends Component {
   }
 
   renderMarkers = () => {
-    const {parkDataByState} = this.props
-    // let currentParks = parkDataByState.find(state=>state.name===this.state.selectedState).parks
+    const {parkData} = this.props
     return (
-      parkDataByState.map(park =>{
+      parkData.map(park =>{ 
           return this.renderMarker(park)
         }
       )
@@ -95,7 +101,7 @@ class Map extends Component {
               data-for={park.id}
               cx={0}
               cy={0}
-              r={2}
+              r={this.state.zoom<=5?this.state.zoom:this.state.zoom/2.5}
               style={{
               stroke: "#2185d0",
               strokeWidth: 3,
@@ -106,11 +112,10 @@ class Map extends Component {
   }
 
   renderTooltips = () => {
-    const {parkDataByState} = this.props
-    // let currentParks = parkDataByState.find(state=>state.name===this.state.selectedState).parks
+    const {parkData} = this.props
 
     return (
-      parkDataByState.map(park =>{
+      parkData.map(park =>{
           return this.renderTooltip(park)
         }
       )
@@ -152,13 +157,13 @@ class Map extends Component {
             height: "auto",
           }}
           >
-          <ZoomableGroup center={[x,y]} zoom={zoom} disablePanning>
+          <ZoomableGroup center={[x,y]} zoom={zoom}>
                         <Geographies disableOptimization={true} geography='/gadm36_USA.json'>
                         {(geographies, projection) => {
                              let geos = geographies.map((geography, i) =>{
                                let stateName = geography.properties.VARNAME_1.slice(0,2)
                              return <Geography
-                                onClick={()=>this.handleStateClick(stateName)}
+                                onDoubleClick={()=>this.handleStateClick(stateName)}
                                 key={stateName}
                                 geography={geography}
                                 projection={projection}
@@ -169,14 +174,14 @@ class Map extends Component {
                         }}
                         </Geographies>
                         <Markers>
-                          {this.props.parkDataByState.length!==0 && this.renderMarkers()}
+                          {this.props.parkData.length!==0 && this.renderMarkers()}
                         </Markers>
                     </ZoomableGroup>
                 </ComposableMap>
                 )}
                 </Motion>
-                {this.props.parkDataByState.length!==0 && this.renderTooltips()}
-                <Button id="fab" circular icon="search minus" size="massive" color="blue" onClick={this.resetMap}/>
+                {this.props.parkData.length!==0 && this.renderTooltips()}
+                <Button id="fab" circular icon={this.state.zoom ===1?"zoom in":"zoom out"} size="massive" color="blue" onClick={this.handleZoom}/>
             </div>
           );
     }

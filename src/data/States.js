@@ -220,9 +220,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -240,9 +240,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -260,9 +260,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -280,9 +280,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -300,9 +300,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -320,9 +320,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -340,9 +340,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -360,9 +360,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -380,9 +380,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -400,9 +400,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -420,9 +420,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -440,9 +440,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -460,9 +460,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -480,9 +480,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -500,9 +500,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -520,9 +520,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -540,9 +540,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -560,9 +560,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -580,9 +580,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -600,9 +600,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -620,9 +620,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -640,9 +640,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -660,9 +660,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -680,9 +680,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -700,9 +700,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -720,9 +720,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -740,9 +740,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -760,9 +760,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -780,9 +780,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -800,9 +800,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -820,9 +820,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -840,9 +840,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -860,9 +860,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -880,9 +880,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -900,9 +900,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -920,9 +920,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -940,9 +940,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -960,9 +960,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -980,9 +980,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -1000,9 +1000,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -1020,9 +1020,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -1040,9 +1040,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -1060,9 +1060,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -1080,9 +1080,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -1100,9 +1100,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -1120,9 +1120,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -1140,9 +1140,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -1160,9 +1160,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -1180,9 +1180,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -1200,9 +1200,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
@@ -1220,9 +1220,9 @@ export const stateStyles = {
             outline: "none",
           },
           pressed: {
-            fill: "#FF5722",
+            fill: "#ECEFF1",
             stroke: "#607D8B",
-            strokeWidth: 1,
+            strokeWidth: 0.75,
             outline: "none",
           }
     },
