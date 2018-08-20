@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import Map from "../components/Map";
 import NavBar from '../components/NavBar'
+import SideBar from '../components/SideBar'
 
 import { withRouter, Route, Switch } from 'react-router-dom'
 
@@ -58,12 +59,13 @@ class App extends Component {
       <div className="App">
         <Route path="/" render={routerProps =>
             <React.Fragment>
-              <NavBar
-                handleDesignationFilter={this.handleDesignationFilter}
-                parkDesignation={this.state.parkDesignation}
-                handleSearch={this.handleSearch}
-              />
-              <Map {...routerProps} parkData={this.state.parkData}/>
+                <NavBar
+                  handleDesignationFilter={this.handleDesignationFilter}
+                  parkDesignation={this.state.parkDesignation}
+                  handleSearch={this.handleSearch}
+                />
+                <Map {...routerProps} parkData={this.state.parkData}/>
+                <SideBar />
             </React.Fragment>
         }/>
         <Switch>
