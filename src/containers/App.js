@@ -88,7 +88,7 @@ class App extends Component {
                 />
                 <Map
                   {...routerProps}
-                  parkData={this.filterBySearchTerm(this.filterParks())}
+                  parkData={this.filterParks()}
                   sidebarVisible={this.state.sidebarVisible}
                 />
               </Grid.Column>

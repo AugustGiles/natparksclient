@@ -66,7 +66,6 @@ export default class NavBar extends Component {
               value={value}
             />
           </Menu.Item>
-          <Menu.Item>
             <Dropdown
               text={this.props.parkDesignation}
               pointing className='link item'
@@ -74,7 +73,6 @@ export default class NavBar extends Component {
               onChange={ (e) => handleDesignationFilter(e)}
               selectOnBlur={false}
             />
-          </ Menu.Item>
           {!this.props.loggedIn  ?
             <Menu.Menu position='right'>
               <Menu.Item onClick={()=>history.push('/login')}>Login</Menu.Item>
