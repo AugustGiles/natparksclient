@@ -22,6 +22,7 @@ class App extends Component {
       parkDesignation: "Park Designation",
       searchTerm: '',
       sidebarVisible: true
+      loggedIn: false
     }
   }
 
@@ -69,16 +70,6 @@ class App extends Component {
         return this.state.parkData
     }
   }
-  handleSearch = (e) => {
-    this.setState({searchTerm: e.target.value})
-  }
-
-  filterBySearchTerm = (parks) => {
-    return parks.filter(park => {
-      return park.full_name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-    })
-  }
-
 
   render() {
 
@@ -91,6 +82,9 @@ class App extends Component {
                   handleDesignationFilter={this.handleDesignationFilter}
                   parkDesignation={this.state.parkDesignation}
                   handleSearch={this.handleSearch}
+                  parkData={this.state.parkData}
+                  loggedIn={this.state.loggedIn}
+                  {...routerProps}
                 />
                 <Map
                   {...routerProps}
