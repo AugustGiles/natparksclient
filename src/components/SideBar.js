@@ -13,7 +13,7 @@ export default class SideBar extends Component {
         inverted
         onHide={this.handleSidebarHide}
         vertical
-        visible={true}
+        visible={false}
         width='thin'
       >
       <Menu.Item as='a'>

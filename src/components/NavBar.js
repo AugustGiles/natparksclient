@@ -19,7 +19,7 @@ export default class NavBar extends Component {
     ]
 
     return (
-      <Sticky>
+      <Sticky className="NavBar">
         <Menu size='massive'>
           <Menu.Item header>Parks Map</Menu.Item>
           <Menu.Item>

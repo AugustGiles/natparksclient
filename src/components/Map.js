@@ -74,7 +74,7 @@ class Map extends Component {
   renderMarkers = () => {
     const {parkData} = this.props
     return (
-      parkData.map(park =>{ 
+      parkData.map(park =>{
           return this.renderMarker(park)
         }
       )
@@ -153,8 +153,8 @@ class Map extends Component {
           width={980}
           height={551}
           style={{
-            width: "100%",
-            height: "auto",
+            width: "auto",
+            height: "100%",
           }}
           >
           <ZoomableGroup center={[x,y]} zoom={zoom}>
