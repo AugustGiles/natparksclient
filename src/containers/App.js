@@ -22,7 +22,7 @@ class App extends Component {
       parkDesignation: "Park Designation",
       searchTerm: '',
       sidebarVisible: false,
-      loggedIn: false
+      loggedIn: true
     }
   }
 
@@ -88,6 +88,7 @@ class App extends Component {
                   handleSearch={this.handleSearch}
                   parkData={this.state.parkData}
                   loggedIn={this.state.loggedIn}
+                  sidebarVisible={this.state.sidebarVisible}
                   handleExtendSidebar={this.handleExtendSidebar}
                   {...routerProps}
                 />

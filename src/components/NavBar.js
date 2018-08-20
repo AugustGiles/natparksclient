@@ -83,7 +83,7 @@ export default class NavBar extends Component {
               <Menu.Item
                 onClick = {() => {this.props.handleExtendSidebar()}
               }>
-                My Info
+                {this.props.sidebarVisible ? "Close Info" : "My Info"}
               </Menu.Item>
               <Menu.Item>Logout</Menu.Item>
             </Menu.Menu>
