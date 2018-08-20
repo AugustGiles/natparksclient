@@ -6,7 +6,7 @@ import SideBar from '../components/SideBar'
 
 import { withRouter, Route, Switch } from 'react-router-dom'
 
-import { Modal } from 'semantic-ui-react'
+import { Modal, Grid } from 'semantic-ui-react'
 
 import ParkDetails from "../components/ParkDetails";
 import AuthForm from "../components/AuthForm";
@@ -20,7 +20,8 @@ class App extends Component {
     this.state = {
       parkData: [],
       parkDesignation: "Park Designation",
-      searchTerm: ''
+      searchTerm: '',
+      sidebarVisible: true
     }
   }
 
@@ -72,25 +73,37 @@ class App extends Component {
     this.setState({searchTerm: e.target.value})
   }
 
-  filterBySearchTerm = () => {
-    return this.state.parkData.filter(park => {
-      return park.name.includes(this.state.searchTerm)
+  filterBySearchTerm = (parks) => {
+    return parks.filter(park => {
+      return park.full_name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
     })
   }
 
+
   render() {
+
     return (
       <div className="App">
         <Route path="/" render={routerProps =>
-            <React.Fragment>
-              <NavBar
-                handleDesignationFilter={this.handleDesignationFilter}
-                parkDesignation={this.state.parkDesignation}
-                handleSearch={this.handleSearch}
-              />
-              <Map {...routerProps} parkData={this.filterParks()}/>
-              <SideBar />
-            </React.Fragment>
+            <Grid className="view">
+              <Grid.Column width={this.state.sidebarVisible ? 12 : 16} >
+                <NavBar
+                  handleDesignationFilter={this.handleDesignationFilter}
+                  parkDesignation={this.state.parkDesignation}
+                  handleSearch={this.handleSearch}
+                />
+                <Map
+                  {...routerProps}
+                  parkData={this.filterBySearchTerm(this.filterParks())}
+                  sidebarVisible={this.state.sidebarVisible}
+                />
+              </Grid.Column>
+              {this.state.sidebarVisible &&
+                <Grid.Column width={4} >
+                  <SideBar />
+                </Grid.Column>
+              }
+            </Grid>
         }/>
         <Switch>
           <Route exact path="/signup" render={routerProps =>

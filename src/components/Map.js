@@ -132,8 +132,7 @@ class Map extends Component {
 
 
         return (
-            <div className="map-container">
-
+            <div className={this.props.sidebarVisible ? "map-container-with-sidebar" : "map-container"} >
             <Motion
           defaultStyle={{
             zoom: 1,

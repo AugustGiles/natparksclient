@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "../css/NavBar.css";
 import { Menu, Sticky, Input, Dropdown } from 'semantic-ui-react'
 
 export default class NavBar extends Component {
@@ -20,7 +21,7 @@ export default class NavBar extends Component {
 
     return (
       <Sticky className="NavBar">
-        <Menu size='massive'>
+        <Menu size='huge'>
           <Menu.Item header>Parks Map</Menu.Item>
           <Menu.Item>
             <Input
@@ -28,6 +29,7 @@ export default class NavBar extends Component {
               onChange={(e) => this.props.handleSearch(e)}
             />
           </Menu.Item>
+          <Menu.Item>
             <Dropdown
               text={this.props.parkDesignation}
               pointing className='link item'
@@ -35,8 +37,9 @@ export default class NavBar extends Component {
               onChange={ (e) => this.props.handleDesignationFilter(e)}
               selectOnBlur={false}
             />
-          <Menu.Item position='right'>Login</Menu.Item>
-        </Menu>
+          </ Menu.Item>
+          <Menu.Item position='right'>Login</ Menu.Item>
+        </ Menu>
       </Sticky>
 
     )

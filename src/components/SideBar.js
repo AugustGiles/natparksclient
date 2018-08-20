@@ -1,35 +1,15 @@
-import React, { Component } from 'react'
-import { Icon, Menu, Sidebar } from 'semantic-ui-react'
+import React, { Component} from 'react'
+import { Segment, Header, Divider } from 'semantic-ui-react'
+import "../css/SideBar.css";
 
 export default class SideBar extends Component {
-
   render() {
     return (
-      <Sidebar
-        as={Menu}
-        animation='overlay'
-        direction='right'
-        icon='labeled'
-        inverted
-        onHide={this.handleSidebarHide}
-        vertical
-        visible={false}
-        width='thin'
-      >
-      <Menu.Item as='a'>
-        <Icon name='home' />
-        Home
-      </Menu.Item>
-      <Menu.Item as='a'>
-        <Icon name='gamepad' />
-        Games
-      </Menu.Item>
-      <Menu.Item as='a'>
-        <Icon name='camera' />
-        Channels
-      </Menu.Item>
-      </ Sidebar>
-
+      <Segment className="SideBar" inverted basic>
+        <Header as='h2'>Hey (Whoever)</Header>
+        <Divider section inverted/>
+        <Header as='h3'>Your Saved Parks</Header>
+      </Segment>
     )
   }
 }
