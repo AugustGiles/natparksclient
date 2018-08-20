@@ -15,14 +15,14 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      parkDataByState: []
+      parkData: []
     }
   }
 
   componentDidMount(){
     fetch('https://still-wildwood-14519.herokuapp.com/parks')
     .then(res=>res.json())
-    .then(stateData=>this.setState({parkDataByState:stateData}))
+    .then(stateData=>this.setState({parkData:stateData}))
   }
 
 handleClose = (e) => {
@@ -33,7 +33,7 @@ handleClose = (e) => {
     return (
       <div className="App">
         <Route path="/" render={routerProps =>  
-            <Map {...routerProps} parkDataByState={this.state.parkDataByState}/>} />
+            <Map {...routerProps} parkData={this.state.parkData}/>} />
         <Route exact path="/:park" render={routerProps =>
           <Modal size="fullscreen" open closeIcon onClose={this.handleClose}>
             <ParkDetails {...routerProps}/>

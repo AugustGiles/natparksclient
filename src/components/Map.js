@@ -65,10 +65,10 @@ class Map extends Component {
   }
 
   renderMarkers = () => {
-    const {parkDataByState} = this.props
-    // let currentParks = parkDataByState.find(state=>state.name===this.state.selectedState).parks
+    const {parkData} = this.props
+    // let currentParks = parkData.find(state=>state.name===this.state.selectedState).parks
     return (
-      parkDataByState.map(park =>{ 
+      parkData.map(park =>{ 
           return this.renderMarker(park)
         }
       )
@@ -95,7 +95,7 @@ class Map extends Component {
               data-for={park.id}
               cx={0}
               cy={0}
-              r={2}
+              r={this.state.selectedState?5:1.5}
               style={{
               stroke: "#2185d0",
               strokeWidth: 3,
@@ -106,11 +106,11 @@ class Map extends Component {
   }
 
   renderTooltips = () => {
-    const {parkDataByState} = this.props
-    // let currentParks = parkDataByState.find(state=>state.name===this.state.selectedState).parks
+    const {parkData} = this.props
+    // let currentParks = parkData.find(state=>state.name===this.state.selectedState).parks
 
     return (
-      parkDataByState.map(park =>{ 
+      parkData.map(park =>{ 
           return this.renderTooltip(park)
         }
       )
@@ -169,13 +169,13 @@ class Map extends Component {
                         }}
                         </Geographies>
                         <Markers>
-                          {this.props.parkDataByState.length!==0 && this.renderMarkers()}
+                          {this.props.parkData.length!==0 && this.renderMarkers()}
                         </Markers>
                     </ZoomableGroup>
                 </ComposableMap>
                 )}
                 </Motion>
-                {this.props.parkDataByState.length!==0 && this.renderTooltips()}
+                {this.props.parkData.length!==0 && this.renderTooltips()}
                 <Button id="fab" circular icon="search minus" size="massive" color="blue" onClick={this.resetMap}/>
             </div>
           );
