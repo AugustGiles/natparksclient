@@ -23,7 +23,8 @@ class App extends Component {
       searchTerm: '',
       sidebarVisible: false,
       loggedIn: false,
-      theme: "light"
+      theme: "light",
+      error: null
     }
   }
 
@@ -38,6 +39,7 @@ class App extends Component {
   }
 
   handleClose = (e) => {
+    this.addError(null)
     this.props.history.push('/')
   }
   handleDesignationFilter = (e) => {
@@ -51,8 +53,13 @@ class App extends Component {
       },
       body: JSON.stringify(userInfo)
     })
-      .then(res => res.json())
+      .then(res => {
+        return res.json()
+      })
       .then(json => {
+        if (!json.success) {
+          throw json.message
+        }
         // Successfully Signed Up
         localStorage.setItem('token',json.token)
         this.setState({loggedIn:true})
@@ -60,7 +67,7 @@ class App extends Component {
       })
       // Sign Up failed
       .catch(error=>{
-        
+        this.addError(error)
       })
   }
 
@@ -72,8 +79,13 @@ class App extends Component {
       },
       body: JSON.stringify(userInfo)
     })
-    .then(res => res.json())
+    .then(res => {
+            return res.json()
+    })
     .then(json => {
+      if (!json.success) {
+        throw "Incorrect Username or Password"
+      }
       // Successfully Logged In
       localStorage.setItem('token',json.token)
       this.setState({loggedIn:true})
@@ -81,7 +93,13 @@ class App extends Component {
     })
     // Log In Failed failed
     .catch(error=>{
+      this.addError(error)
+    })
+  }
 
+  addError = (errorMessage) => {
+    this.setState({
+      error: errorMessage
     })
   }
 
@@ -166,12 +184,19 @@ class App extends Component {
         <Switch>
           <Route exact path="/signup" render={routerProps =>
             <Modal size="tiny" open closeIcon onClose={this.handleClose}>
-              <AuthForm formType="signup" onSubmitHandler={this.handleUserSignup}/>
+              <AuthForm formType="signup" 
+                        onSubmitHandler={this.handleUserSignup}
+                        errorMessage={this.state.error}
+                        addError = {this.addError}/>
             </Modal>
           } />
           <Route exact path="/login" render={routerProps =>
             <Modal size="tiny" open closeIcon onClose={this.handleClose}>
-              <AuthForm formType="login" onSubmitHandler={this.handleUserLogin}/>
+              <AuthForm formType="login" 
+                        onSubmitHandler={this.handleUserLogin}
+                        errorMessage={this.state.error}
+                        addError = {this.addError}
+                        />
             </Modal>
           } />
           <Route exact path="/:park" render={routerProps =>

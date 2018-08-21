@@ -9,7 +9,7 @@ export default class SideBar extends Component {
   }
   
   componentDidMount() {
-    fetch('https://still-wildwood-14519.herokuapp.com/user', {
+    fetch('https://still-wildwood-14519.herokuapp.com/profile', {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

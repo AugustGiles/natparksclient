@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import { Form, Modal } from "semantic-ui-react";
+import { Form, Modal, Message } from "semantic-ui-react";
 
 class AuthForm extends Component {
     state = {
         username: "",
-        password: ""
+        password: "",
+        passwordConfirmation: ""
      }
 
     handleChange = (e) => {
@@ -15,16 +16,47 @@ class AuthForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.onSubmitHandler(this.state)
+        if (this.validateInputs()) {
+            this.props.onSubmitHandler(this.state)
+        }
     }
 
+    validateInputs = () => {
+        // Check if all fields are filled
+        if (this.props.formType==='login') {
+            if (this.state.username==="" || this.state.password==="") {
+                // Add Error
+                this.props.addError("Username/Password Required")
+                return false
+            }
+        } else {
+            if (this.state.username==="" || this.state.password==="" || this.state.passwordConfirmation==="") {
+                // Add Error
+                this.props.addError("Username/Password/Password Confirmation Required")
+                return false
+            }
+            if (this.state.password!==this.state.passwordConfirmation) {
+                this.props.addError("Password and Password Confirmation must match")
+                return false
+            }
+        }
+        return true
+    }
+
+    
+
     render() {
-        const {formType} = this.props
+        const {formType, errorMessage} = this.props
         return (
             <React.Fragment >
                 <Modal.Header>{formType==="login"?"Login":"Sign Up"}</Modal.Header>
                 <Modal.Content >
-                    <Form>
+                    <Form error={errorMessage}>
+                        <Message
+                            error
+                            header='Error'
+                            content={errorMessage}
+                        />
                         <Form.Field>
                             <label>Username</label>
                             <input value={this.state.username} placeholder='Username'
@@ -35,11 +67,13 @@ class AuthForm extends Component {
                             <input value={this.state.password} placeholder='Password'
                                     onChange={this.handleChange} name="password" type="password"/>
                         </Form.Field>
-                        {formType==='Sign Up' && 
+                        {formType==='signup' && 
                         <Form.Field>
                             <label>Password Confirmaton</label>
-                            <input  placeholder='Password Confirmation'
-                                    name="password" type="password"/>
+                            <input  value={this.state.passwordConfirmation}
+                                    placeholder='Password Confirmation'
+                                    onChange={this.handleChange}
+                                    name="passwordConfirmation" type="password"/>
                         </Form.Field>}
                         <Form.Button onClick={this.handleSubmit}>{formType==="login"?"Login":"Sign Up"}</Form.Button>
                     </Form>
