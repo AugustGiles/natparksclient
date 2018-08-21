@@ -63,9 +63,24 @@ class ParkDetails extends Component {
     })
       .then(res => res.json())
       .then(json => {
-        console.log(json)
+        this.props.getUsersFollowedParks([...this.props.followedParkIds,this.state.parkInfo.id])
         
       });
+    }
+
+    handleUserUnfollowPark = () => {
+        
+    }
+
+    renderFollowUnfollowParkButton = () => {
+        if (this.props.loggedIn) {
+            if (this.props.followedParkIds.includes(this.state.parkInfo.id)) {
+                return <Button color='red' onClick={this.handleUserFollowPark}>Unfollow Park</Button>
+            } else {
+                return <Button color='green' onClick={this.handleUserUnfollowPark}>Follow Park</Button>
+            }
+        }
+       
     }
   
 
@@ -106,11 +121,14 @@ class ParkDetails extends Component {
                                 name='alerts'active={tab === 'alerts'}
                                 onClick={this.handleItemClick}
                             />
+                            <Menu.Item position="right">
+                                {this.props.loggedIn && this.renderFollowUnfollowParkButton()}
+                            </Menu.Item>
                         </Menu>
                         <Segment attached='bottom'>
                             {this.currentTab()}
                         </Segment>
-                        {this.props.loggedIn && <Button onClick={this.handleUserFollowPark}>Follow Park</Button>}
+                        
                     </Modal.Description>
                 </Modal.Content>
         </React.Fragment>  );

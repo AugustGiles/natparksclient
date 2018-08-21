@@ -221,7 +221,9 @@ class App extends Component {
             <Modal size="fullscreen" open closeIcon onClose={this.handleClose}>
               <ParkDetails
                 {...routerProps}
-                loggedIn={this.state.loggedIn}/>
+                loggedIn={this.state.loggedIn}
+                followedParkIds={this.state.followedParkIds}
+                getUsersFollowedParks={this.getUsersFollowedParks}/>
             </Modal>
           }/>
         </Switch>
