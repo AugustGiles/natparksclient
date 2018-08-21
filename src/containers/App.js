@@ -25,7 +25,7 @@ class App extends Component {
       loggedIn: false,
       theme: "light",
       error: null,
-      followedParkIds: []
+      followedParks: []
     }
   }
 
@@ -49,7 +49,7 @@ class App extends Component {
   }
 
   getUsersFollowedParks = (ids) => {
-    this.setState({followedParkIds: ids})
+    this.setState({followedParks: ids})
   }
 
   handleClose = (e) => {
@@ -192,6 +192,7 @@ class App extends Component {
                   <Grid.Column width={4}style={{padding:0}}>
                     <SideBar theme={this.state.theme}
                               getUsersFollowedParks={this.getUsersFollowedParks}
+                              followedParks={this.state.followedParks}
                               {...routerProps}
                     />
                   </Grid.Column>
@@ -223,7 +224,7 @@ class App extends Component {
               <ParkDetails
                 {...routerProps}
                 loggedIn={this.state.loggedIn}
-                followedParkIds={this.state.followedParkIds}
+                followedParks={this.state.followedParks}
                 getUsersFollowedParks={this.getUsersFollowedParks}/>
             </Modal>
           }/>

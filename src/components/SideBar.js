@@ -23,7 +23,7 @@ export default class SideBar extends Component {
       .then(json => {
         this.setState({user: json, loading:false})
         let parks = json.parks.map(park => {
-          return park.id
+          return {id: park.id, name: park.full_name}
         })
         this.props.getUsersFollowedParks(parks)
       })
@@ -67,15 +67,15 @@ export default class SideBar extends Component {
   }
 
   renderAccordionTitleAndContent = () => {
-    if (this.state.user.parks) {
-      return this.state.user.parks.map(park => {
+    if (this.props.followedParks) {
+      return this.props.followedParks.map(park => {
         return (
           <React.Fragment key={park.id}>
             <Accordion.Title
               active={this.state.activePark === park.id}
               index={park.id}
               onClick={() => this.handleClick(park.id)}
-              ><Header as='h3'>{park.full_name}</Header>
+              ><Header as='h3'>{park.name}</Header>
             </Accordion.Title>
             <Accordion.Content active={this.state.activePark === park.id}>
               <Segment>
