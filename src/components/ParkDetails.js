@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Header, Image } from 'semantic-ui-react'
+import { Modal, Header, Image, Button } from 'semantic-ui-react'
 
 class ParkDetails extends Component {
     state={
@@ -9,10 +9,21 @@ class ParkDetails extends Component {
 
     
     componentDidMount(){
-        let parkIndex = this.props.match.params.park
-        fetch(`https://still-wildwood-14519.herokuapp.com/parks/${parkIndex}`)
+        let parkId = this.props.match.params.park
+        // Fetch park show page
+        fetch(`https://still-wildwood-14519.herokuapp.com/parks/${parkId}`)
         .then(res=>res.json())
         .then(parkInfo=>this.setState({parkInfo:parkInfo},this.setImageScroll))
+
+        // Fetch alerts
+        fetch(`https://still-wildwood-14519.herokuapp.com/parks/${parkId}/alerts`)
+        .then(res=>res.json())
+        .then(console.log)
+
+        // Fetch Events
+        fetch(`https://still-wildwood-14519.herokuapp.com/parks/${parkId}/events`)
+        .then(res=>res.json())
+        .then(console.log)
     }
 
     setImageScroll = () => {
@@ -26,6 +37,23 @@ class ParkDetails extends Component {
 			    imageIndex: nextImageIndex
 		    })
         },3000)
+    }
+
+
+    handleUserFollowPark = () => {
+        fetch(`https://still-wildwood-14519.herokuapp.com/follow/${this.state.parkInfo.id}`, 
+        {method:"POST",
+        headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    })
+      .then(res => res.json())
+      .then(json => {
+        console.log(json)
+        
+      });
     }
   
 
@@ -49,6 +77,7 @@ class ParkDetails extends Component {
                             <p>{parkInfo.weather_info}</p>
                         }   
                         <a href={parkInfo.url} target="_blank">Park Website</a>
+                        {this.props.loggedIn && <Button onClick={this.handleUserFollowPark}>Follow Park</Button>}
                     </Modal.Description>
                 </Modal.Content>
         </React.Fragment>  );

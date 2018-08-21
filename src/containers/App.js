@@ -29,6 +29,14 @@ class App extends Component {
   }
 
   componentDidMount(){
+    // Check if there is a user in localstorage
+    if (localStorage.getItem('token')) {
+      this.setState({
+        loggedIn: true
+      })
+    }
+
+
     fetch('https://still-wildwood-14519.herokuapp.com/parks')
     .then(res=>res.json())
     .then(stateData=>this.setState({parkData:stateData}))
@@ -201,7 +209,9 @@ class App extends Component {
           } />
           <Route exact path="/:park" render={routerProps =>
             <Modal size="fullscreen" open closeIcon onClose={this.handleClose}>
-              <ParkDetails {...routerProps}/>
+              <ParkDetails 
+                {...routerProps}
+                loggedIn={this.state.loggedIn}/>
             </Modal>
           }/>
         </Switch>
