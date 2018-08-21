@@ -24,7 +24,8 @@ class App extends Component {
       sidebarVisible: false,
       loggedIn: false,
       theme: "light",
-      error: null
+      error: null,
+      followedParkIds: []
     }
   }
 
@@ -44,6 +45,10 @@ class App extends Component {
 
   toggleTheme = () => {
     this.state.theme === "light"?this.setState({theme:"dark"}):this.setState({theme:"light"})
+  }
+
+  getUsersFollowedParks = (id) => {
+    this.setState({followedParkIds: [...this.state.followedParkIds, id]})
   }
 
   handleClose = (e) => {
@@ -166,11 +171,11 @@ class App extends Component {
                   logoutUser={this.logoutUser}
                   {...routerProps}
                 />
-          
-            <Grid style={{margin: 0}} className="view" 
+
+            <Grid style={{margin: 0}} className="view"
             style={this.state.theme==='light'?{backgroundColor:'white'}:{backgroundColor:'#202124'}}>
               <Grid.Column style={{padding:0}}  width={this.state.sidebarVisible ? 12 : 16} >
-                
+
                 <Map
                   {...routerProps}
                   parkData={this.filterParks()}
@@ -182,7 +187,9 @@ class App extends Component {
               {this.state.sidebarVisible &&
                 <Transition transitionOnMount={true} animation="fade left">
                   <Grid.Column width={4}style={{padding:0}}>
-                    <SideBar theme={this.state.theme}/>
+                    <SideBar theme={this.state.theme}
+                              getUsersFollowedParks={this.getUsersFollowedParks}
+                    />
                   </Grid.Column>
                 </Transition>
               }
@@ -192,7 +199,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/signup" render={routerProps =>
             <Modal size="tiny" open closeIcon onClose={this.handleClose}>
-              <AuthForm formType="signup" 
+              <AuthForm formType="signup"
                         onSubmitHandler={this.handleUserSignup}
                         errorMessage={this.state.error}
                         addError = {this.addError}/>
@@ -200,7 +207,7 @@ class App extends Component {
           } />
           <Route exact path="/login" render={routerProps =>
             <Modal size="tiny" open closeIcon onClose={this.handleClose}>
-              <AuthForm formType="login" 
+              <AuthForm formType="login"
                         onSubmitHandler={this.handleUserLogin}
                         errorMessage={this.state.error}
                         addError = {this.addError}
@@ -209,7 +216,7 @@ class App extends Component {
           } />
           <Route exact path="/:park" render={routerProps =>
             <Modal size="fullscreen" open closeIcon onClose={this.handleClose}>
-              <ParkDetails 
+              <ParkDetails
                 {...routerProps}
                 loggedIn={this.state.loggedIn}/>
             </Modal>
