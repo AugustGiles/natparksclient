@@ -70,7 +70,7 @@ export default class SideBar extends Component {
     if (this.state.user.parks) {
       return this.state.user.parks.map(park => {
         return (
-          <React.Fragment>
+          <React.Fragment key={park.id}>
             <Accordion.Title
               active={this.state.activePark === park.id}
               index={park.id}
