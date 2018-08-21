@@ -120,7 +120,7 @@ class ParkDetails extends Component {
                 <Modal.Content image scrolling>
                     {parkInfo.image_sources &&
                     <Image wrapped size="massive" src={parkInfo.image_sources[this.state.imageIndex]}/>}
-                    <Modal.Description>
+                    <Modal.Description style={{minWidth:'50%'}}>
                         <Menu attached='top' tabular>
                             <Menu.Item 
                                 name='info' active={tab === 'info'} 
