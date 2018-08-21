@@ -1,5 +1,5 @@
 import React, { Component} from 'react'
-import { Segment, Header, Divider, Accordion } from 'semantic-ui-react'
+import { Segment, Header, Divider, Accordion, Button } from 'semantic-ui-react'
 import "../css/SideBar.css";
 
 export default class SideBar extends Component {
@@ -44,17 +44,25 @@ export default class SideBar extends Component {
 
   renderAlerts = (id) => {
     if (this.state.activePark === id) {
-      return this.state.activeParkAlerts.map(alert => {
-        return <Header as='h5'>{alert.title}</Header>
-      })
+      if (this.state.activeParkAlerts.length > 0) {
+        return this.state.activeParkAlerts.map(alert => {
+          return <Header as='h5'>{alert.title}</Header>
+        })
+      } else {
+        return <Header as='h5'>Currently No Alerts To Show</Header>
+      }
     }
   }
 
   renderEvents = (id) => {
     if (this.state.activePark === id) {
-      return this.state.activeParkEvents.map(event => {
-        return <Header as='h5'>{event.title}</Header>
-      })
+      if (this.state.activeParkEvents.length > 0) {
+        return this.state.activeParkEvents.map(event => {
+          return <Header as='h5'>{event.title}</Header>
+        })
+      } else {
+        return <Header as='h5'>Currently No Events To Show</Header>
+      }
     }
   }
 
@@ -67,17 +75,20 @@ export default class SideBar extends Component {
               active={this.state.activePark === park.id}
               index={park.id}
               onClick={() => this.handleClick(park.id)}
-              ><Header>{park.full_name}</Header>
+              ><Header as='h3'>{park.full_name}</Header>
             </Accordion.Title>
             <Accordion.Content active={this.state.activePark === park.id}>
               <Segment>
                 <Header as='h4'>Alerts:</Header>
+                <Divider section inverted/>
                 {this.renderAlerts(park.id)}
               </Segment>
               <Segment>
                 <Header as='h4'>Events:</Header>
+                <Divider section inverted/>
                 {this.renderEvents(park.id)}
               </Segment>
+              <Button onClick={() => this.props.history.push(`/${park.id}`)}>Go To Full Park Page</Button>
             </Accordion.Content>
           </React.Fragment>
         )
@@ -95,7 +106,6 @@ export default class SideBar extends Component {
             style={this.props.theme==='light'?{color:'black'}:{color:'white'}} as='h2'>
            {this.state.loading?"Loading...":this.state.user.username}
           </Header>
-          <Divider section inverted/>
           <Accordion fluid styled inverted={this.props.theme==='light'? false : true}>
             {this.renderAccordionTitleAndContent()}
           </ Accordion>
@@ -103,9 +113,3 @@ export default class SideBar extends Component {
     )
   }
 }
-
-// <Header
-//   style={this.props.theme==='light'?{color:'black'}:{color:'white'}}
-//   as='h3'>
-//   Your Saved Parks
-// </Header>

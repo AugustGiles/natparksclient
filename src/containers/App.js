@@ -192,6 +192,7 @@ class App extends Component {
                   <Grid.Column width={4}style={{padding:0}}>
                     <SideBar theme={this.state.theme}
                               getUsersFollowedParks={this.getUsersFollowedParks}
+                              {...routerProps}
                     />
                   </Grid.Column>
                 </Transition>
