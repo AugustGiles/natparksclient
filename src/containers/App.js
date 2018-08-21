@@ -47,8 +47,8 @@ class App extends Component {
     this.state.theme === "light"?this.setState({theme:"dark"}):this.setState({theme:"light"})
   }
 
-  getUsersFollowedParks = (id) => {
-    this.setState({followedParkIds: [...this.state.followedParkIds, id]})
+  getUsersFollowedParks = (ids) => {
+    this.setState({followedParkIds: ids})
   }
 
   handleClose = (e) => {
