@@ -155,8 +155,8 @@ class Map extends Component {
           width={980}
           height={551}
           style={{
-            width: "auto",
-            height: "100%",
+            width: "100%",
+            height: "auto",
             overflow: "hidden"
           }}
           >
