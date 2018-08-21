@@ -189,7 +189,7 @@ class App extends Component {
               </Grid.Column>
               {this.state.sidebarVisible &&
                 <Transition transitionOnMount={true} animation="fade left">
-                  <Grid.Column width={4}style={{padding:0}}>
+                  <Grid.Column width={4}style={{padding:0, overflow:'auto'}}>
                     <SideBar theme={this.state.theme}
                               getUsersFollowedParks={this.getUsersFollowedParks}
                               followedParks={this.state.followedParks}
