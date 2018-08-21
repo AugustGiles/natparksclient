@@ -24,7 +24,7 @@ class Map extends Component {
   constructor() {
     super()
     this.state = {
-      center: [ -97, 40 ],
+      center: [ -97, 38 ],
       zoom: 1,
       selectedState: null,
       stateStyles: stateStyles
@@ -40,7 +40,7 @@ class Map extends Component {
 
   resetMap = () => {
     this.setState({
-      center: [ -97, 40 ],
+      center: [ -97, 38 ],
       zoom: 1,
       selectedState: null,
       stateStyles: stateStyles
@@ -132,12 +132,15 @@ class Map extends Component {
 
 
         return (
-            <div className={this.props.sidebarVisible ? "map-container-with-sidebar" : "map-container"} >
+            <div 
+              className={this.props.sidebarVisible ? "map-container map-container-with-sidebar" : "map-container"} 
+              style={this.props.theme==='light'?{backgroundColor:'#DAE0E6'}:{backgroundColor:'#2c2d32'}}
+              >
             <Motion
           defaultStyle={{
             zoom: 1,
             x: -97,
-            y: 40,
+            y: 38,
           }}
           style={{
             zoom: spring(this.state.zoom, {stiffness: 210, damping: 20}),
@@ -154,6 +157,7 @@ class Map extends Component {
           style={{
             width: "auto",
             height: "100%",
+            overflow: "hidden"
           }}
           >
           <ZoomableGroup center={[x,y]} zoom={zoom}>
@@ -181,6 +185,13 @@ class Map extends Component {
                 </Motion>
                 {this.props.parkData.length!==0 && this.renderTooltips()}
                 <Button id="fab" circular icon={this.state.zoom ===1?"zoom in":"zoom out"} size="massive" color="blue" onClick={this.handleZoom}/>
+                <Button id="theme-button" 
+                    style={this.props.theme==='light'?
+                      {backgroundColor:'#202124', color:'white'}:
+                      {backgroundColor:'#DAE0E6', color: 'black'}} circular 
+                    onClick={this.props.toggleTheme}>
+                    {this.props.theme==='light'?'dark theme':'light theme'}
+                </Button>
             </div>
           );
     }

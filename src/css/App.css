@@ -29,7 +29,11 @@
   to { transform: rotate(360deg); }
 }
  .view {
-   height: 100vh;
+   height: 90vh;
  }
 
+
+ div.ui.grid.view {
+  margin: 0
+ }
 

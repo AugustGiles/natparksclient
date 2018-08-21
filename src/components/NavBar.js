@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "../css/NavBar.css";
-import { Menu, Sticky, Search, Dropdown } from 'semantic-ui-react'
+import { Menu, Search, Dropdown } from 'semantic-ui-react'
 
 export default class NavBar extends Component {
   state = {
@@ -54,10 +54,15 @@ export default class NavBar extends Component {
     const {handleDesignationFilter, history} = this.props
 
     return (
-      <Sticky className="NavBar">
+      <div className="NavBar" 
+        style={this.props.theme==='light'?{backgroundColor:'white'}:{backgroundColor:'#202124'}}>
         <Menu secondary size='huge'>
-          <Menu.Item header>Parks Map</Menu.Item>
-          <Menu.Item>
+          <Menu.Item header 
+              style={this.props.theme==='light'?{color:'black'}:{color:'white'}}>
+            Parks Map
+          </Menu.Item>
+          <Menu.Item
+            >
             <Search
               loading={isLoading}
               onResultSelect={this.handleResultSelect}
@@ -67,6 +72,7 @@ export default class NavBar extends Component {
             />
           </Menu.Item>
             <Dropdown
+              style={this.props.theme==='light'?{color:'black'}:{color:'white'}}
               text={this.props.parkDesignation}
               pointing className='link item'
               options={options}
@@ -75,21 +81,28 @@ export default class NavBar extends Component {
             />
           {!this.props.loggedIn  ?
             <Menu.Menu position='right'>
-              <Menu.Item onClick={()=>history.push('/login')}>Login</Menu.Item>
-              <Menu.Item onClick={()=>history.push('/signup')} >Signup</Menu.Item>
+              <Menu.Item
+                style={this.props.theme==='light'?{color:'black'}:{color:'white'}}
+                 onClick={()=>history.push('/login')}>Login</Menu.Item>
+              <Menu.Item
+                style={this.props.theme==='light'?{color:'black'}:{color:'white'}}
+               onClick={()=>history.push('/signup')} >Signup</Menu.Item>
             </Menu.Menu>
             :
             <Menu.Menu position='right'>
               <Menu.Item
+                style={this.props.theme==='light'?{color:'black'}:{color:'white'}}
                 onClick = {() => {this.props.handleExtendSidebar()}
               }>
                 My Info
               </Menu.Item>
-              <Menu.Item>Logout</Menu.Item>
+              <Menu.Item
+                style={this.props.theme==='light'?{color:'black'}:{color:'white'}}>
+                Logout</Menu.Item>
             </Menu.Menu>
           }
         </Menu>
-      </Sticky>
+      </div>
 
     )
   }

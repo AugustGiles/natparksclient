@@ -6,7 +6,7 @@ import SideBar from '../components/SideBar'
 
 import { withRouter, Route, Switch } from 'react-router-dom'
 
-import { Modal, Grid } from 'semantic-ui-react'
+import { Modal, Grid, Transition } from 'semantic-ui-react'
 
 import ParkDetails from "../components/ParkDetails";
 import AuthForm from "../components/AuthForm";
@@ -22,7 +22,8 @@ class App extends Component {
       parkDesignation: "Park Designation",
       searchTerm: '',
       sidebarVisible: false,
-      loggedIn: false
+      loggedIn: true,
+      theme: "light"
     }
   }
 
@@ -30,6 +31,10 @@ class App extends Component {
     fetch('https://still-wildwood-14519.herokuapp.com/parks')
     .then(res=>res.json())
     .then(stateData=>this.setState({parkData:stateData}))
+  }
+
+  toggleTheme = () => {
+    this.state.theme === "light"?this.setState({theme:"dark"}):this.setState({theme:"light"})
   }
 
   handleClose = (e) => {
@@ -80,29 +85,39 @@ class App extends Component {
     return (
       <div className="App">
         <Route path="/" render={routerProps =>
-            <Grid  className="view">
-              <Grid.Column style={{paddingRight:"0", backgroundColor:"lightgrey"}}  width={this.state.sidebarVisible ? 12 : 16} >
-                <NavBar
+          <React.Fragment>
+            <NavBar
                   handleDesignationFilter={this.handleDesignationFilter}
                   parkDesignation={this.state.parkDesignation}
                   handleSearch={this.handleSearch}
                   parkData={this.state.parkData}
                   loggedIn={this.state.loggedIn}
                   handleExtendSidebar={this.handleExtendSidebar}
+                  theme={this.state.theme}
                   {...routerProps}
                 />
+          
+            <Grid style={{margin: 0}} className="view" 
+            style={this.state.theme==='light'?{backgroundColor:'white'}:{backgroundColor:'#202124'}}>
+              <Grid.Column style={{padding:0}}  width={this.state.sidebarVisible ? 12 : 16} >
+                
                 <Map
                   {...routerProps}
                   parkData={this.filterParks()}
                   sidebarVisible={this.state.sidebarVisible}
+                  theme={this.state.theme}
+                  toggleTheme={this.toggleTheme}
                 />
               </Grid.Column>
               {this.state.sidebarVisible &&
-                <Grid.Column width={4} style={{paddingLeft:"0"}}>
-                  <SideBar />
-                </Grid.Column>
+                <Transition transitionOnMount={true} animation="fade left">
+                  <Grid.Column width={4}style={{padding:0}}>
+                    <SideBar theme={this.state.theme}/>
+                  </Grid.Column>
+                </Transition>
               }
             </Grid>
+            </React.Fragment>
         }/>
         <Switch>
           <Route exact path="/signup" render={routerProps =>

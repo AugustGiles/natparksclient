@@ -1,16 +1,14 @@
 
 .map-container {
     position: relative;
-    height: 90%;
-    max-width: 1500px;
+    height: 100%;
     margin: 0 auto;
+    display: flex;
+    background-color: #DAE0E6;
 }
 
 .map-container-with-sidebar {
-  position: relative;
-  height: auto;
-  width: 100%;
-  margin: 0 auto;
+  border-radius: 0 10px 0 0;
 }
 
 path {
@@ -21,4 +19,12 @@ path {
     position: absolute;
     right: 5%;
     bottom: 5%;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12)
+}
+
+#theme-button {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12)
 }
