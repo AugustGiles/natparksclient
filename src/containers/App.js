@@ -32,7 +32,8 @@ class App extends Component {
     // Check if there is a user in localstorage
     if (localStorage.getItem('token')) {
       this.setState({
-        loggedIn: true
+        loggedIn: true,
+        sidebarVisible: true
       })
     }
 
@@ -70,7 +71,8 @@ class App extends Component {
         }
         // Successfully Signed Up
         localStorage.setItem('token',json.token)
-        this.setState({loggedIn:true})
+        this.setState({loggedIn:true,
+          sidebarVisible: true})
         this.props.history.push('/')
       })
       // Sign Up failed
@@ -96,7 +98,8 @@ class App extends Component {
       }
       // Successfully Logged In
       localStorage.setItem('token',json.token)
-      this.setState({loggedIn:true})
+      this.setState({loggedIn:true,
+        sidebarVisible: true})
       this.props.history.push('/')
     })
     // Log In Failed failed

@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
-import { Modal, Header, Image, Button } from 'semantic-ui-react'
+import { Modal, Menu, Image, Button, Segment} from 'semantic-ui-react'
+import ParkInfo from "./ParkInfo";
+import ParkEvents from "./ParkEvents";
+import ParkAlerts from "./ParkAlerts";
+
 
 class ParkDetails extends Component {
     state={
         parkInfo:{},
-        imageIndex: 0
+        imageIndex: 0,
+        events: [],
+        alerts: [],
+        tab: 'info',
+        loading: {
+            info: true,
+            alerts: true,
+            events: true
+        }
     }
 
     
@@ -13,17 +25,17 @@ class ParkDetails extends Component {
         // Fetch park show page
         fetch(`https://still-wildwood-14519.herokuapp.com/parks/${parkId}`)
         .then(res=>res.json())
-        .then(parkInfo=>this.setState({parkInfo:parkInfo},this.setImageScroll))
+        .then(parkInfo=>this.setState({parkInfo:parkInfo, loading: {...this.state.loading,info:false}},this.setImageScroll))
 
         // Fetch alerts
         fetch(`https://still-wildwood-14519.herokuapp.com/parks/${parkId}/alerts`)
         .then(res=>res.json())
-        .then(console.log)
+        .then(alerts=>this.setState({alerts:alerts.data, loading: {...this.state.loading,alerts:false}}))
 
         // Fetch Events
         fetch(`https://still-wildwood-14519.herokuapp.com/parks/${parkId}/events`)
         .then(res=>res.json())
-        .then(console.log)
+        .then(events=>this.setState({events:events.data, loading: {...this.state.loading,events:false}}))
     }
 
     setImageScroll = () => {
@@ -61,22 +73,43 @@ class ParkDetails extends Component {
         clearInterval(this.interval)
     }
 
+    currentTab = () => {
+        switch (this.state.tab) {
+            case 'info':
+                return <ParkInfo parkInfo={this.state.parkInfo} loading={this.state.loading.info}/>
+            case 'events':
+                return <ParkEvents events={this.state.events} loading={this.state.loading.events}/>
+            case 'alerts':
+                return <ParkAlerts alerts={this.state.alerts} loading={this.state.loading.alerts}/>
+        }
+    }
+    handleItemClick = (e, { name }) => this.setState({ tab: name })
+
     render() { 
-        const {parkInfo} = this.state
+        const {parkInfo, events, alerts, tab} = this.state
         return (
         <React.Fragment >
             <Modal.Header>{parkInfo.full_name}</Modal.Header>
                 <Modal.Content image scrolling>
                     {parkInfo.image_sources &&
-                        <Image wrapped size="massive" src={parkInfo.image_sources[this.state.imageIndex]}/>}
+                    <Image wrapped size="massive" src={parkInfo.image_sources[this.state.imageIndex]}/>}
                     <Modal.Description>
-                        <Header>{parkInfo.designation}</Header>
-                        <Header>Description:</Header>
-                        <p>{parkInfo.description}</p>
-                        {parkInfo.weather_info!=="" && 
-                            <p>{parkInfo.weather_info}</p>
-                        }   
-                        <a href={parkInfo.url} target="_blank">Park Website</a>
+                        <Menu attached='top' tabular>
+                            <Menu.Item 
+                                name='info' active={tab === 'info'} 
+                                onClick={this.handleItemClick} />
+                            <Menu.Item
+                                name='events'active={tab === 'events'}
+                                onClick={this.handleItemClick}
+                            />
+                            <Menu.Item
+                                name='alerts'active={tab === 'alerts'}
+                                onClick={this.handleItemClick}
+                            />
+                        </Menu>
+                        <Segment attached='bottom'>
+                            {this.currentTab()}
+                        </Segment>
                         {this.props.loggedIn && <Button onClick={this.handleUserFollowPark}>Follow Park</Button>}
                     </Modal.Description>
                 </Modal.Content>
