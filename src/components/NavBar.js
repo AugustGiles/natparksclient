@@ -92,12 +92,13 @@ export default class NavBar extends Component {
             <Menu.Menu position='right'>
               <Menu.Item
                 style={this.props.theme==='light'?{color:'black'}:{color:'white'}}
-                onClick = {() => {this.props.handleExtendSidebar()}
-              }>
+                onClick = {this.props.handleExtendSidebar}>
                 {this.props.sidebarVisible ? "Close Info" : "My Info"}
               </Menu.Item>
               <Menu.Item
-                style={this.props.theme==='light'?{color:'black'}:{color:'white'}}>
+                style={this.props.theme==='light'?{color:'black'}:{color:'white'}}
+                onClick = {this.props.logoutUser}
+                >
                 Logout</Menu.Item>
             </Menu.Menu>
           }

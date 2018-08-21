@@ -35,6 +35,12 @@ class AuthForm extends Component {
                             <input value={this.state.password} placeholder='Password'
                                     onChange={this.handleChange} name="password" type="password"/>
                         </Form.Field>
+                        {formType==='Sign Up' && 
+                        <Form.Field>
+                            <label>Password Confirmaton</label>
+                            <input  placeholder='Password Confirmation'
+                                    name="password" type="password"/>
+                        </Form.Field>}
                         <Form.Button onClick={this.handleSubmit}>{formType==="login"?"Login":"Sign Up"}</Form.Button>
                     </Form>
                 </Modal.Content>

@@ -22,7 +22,7 @@ class App extends Component {
       parkDesignation: "Park Designation",
       searchTerm: '',
       sidebarVisible: false,
-      loggedIn: true,
+      loggedIn: false,
       theme: "light"
     }
   }
@@ -44,11 +44,53 @@ class App extends Component {
     this.setState({parkDesignation: e.target.innerText})
   }
   handleUserSignup = (userInfo) => {
-    console.log(userInfo)
+    fetch('https://still-wildwood-14519.herokuapp.com/users', {
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userInfo)
+    })
+      .then(res => res.json())
+      .then(json => {
+        // Successfully Signed Up
+        localStorage.setItem('token',json.token)
+        this.setState({loggedIn:true})
+        this.props.history.push('/')
+      })
+      // Sign Up failed
+      .catch(error=>{
+        
+      })
   }
 
   handleUserLogin = (userInfo) => {
-    console.log(userInfo)
+    fetch('https://still-wildwood-14519.herokuapp.com/login', {
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userInfo)
+    })
+    .then(res => res.json())
+    .then(json => {
+      // Successfully Logged In
+      localStorage.setItem('token',json.token)
+      this.setState({loggedIn:true})
+      this.props.history.push('/')
+    })
+    // Log In Failed failed
+    .catch(error=>{
+
+    })
+  }
+
+  logoutUser = () => {
+    localStorage.clear()
+    this.setState({
+      loggedIn: false,
+      sidebarVisible: false
+    })
   }
 
   handleExtendSidebar = () => {
@@ -95,6 +137,7 @@ class App extends Component {
                   sidebarVisible={this.state.sidebarVisible}
                   handleExtendSidebar={this.handleExtendSidebar}
                   theme={this.state.theme}
+                  logoutUser={this.logoutUser}
                   {...routerProps}
                 />
           
