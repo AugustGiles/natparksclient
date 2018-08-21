@@ -63,7 +63,8 @@ class ParkDetails extends Component {
         })
       .then(res => res.json())
       .then(json => {
-        this.props.getUsersFollowedParks([...this.props.followedParkIds,this.state.parkInfo.id])
+        this.props.getUsersFollowedParks([...this.props.followedParks,
+            {id:this.state.parkInfo.id, name:this.state.parkInfo.full_name}])
         
       });
     }
@@ -79,13 +80,13 @@ class ParkDetails extends Component {
         })
       .then(res => res.json())
       .then(json => {
-        this.props.getUsersFollowedParks(this.props.followedParkIds.filter(park=>park!==this.state.parkInfo.id))
+        this.props.getUsersFollowedParks(this.props.followedParks.filter(park=>park.id!==this.state.parkInfo.id))
       });
     }
 
     renderFollowUnfollowParkButton = () => {
         if (this.props.loggedIn) {
-            if (this.props.followedParkIds.includes(this.state.parkInfo.id)) {
+            if (this.props.followedParks.find(park=>park.id===this.state.parkInfo.id)) {
                 return <Button color='red' onClick={this.handleUserUnfollowPark}>Unfollow Park</Button>
             } else {
                 return <Button color='green' onClick={this.handleUserFollowPark}>Follow Park</Button>
