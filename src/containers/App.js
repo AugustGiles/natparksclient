@@ -92,6 +92,7 @@ class App extends Component {
                   handleSearch={this.handleSearch}
                   parkData={this.state.parkData}
                   loggedIn={this.state.loggedIn}
+                  sidebarVisible={this.state.sidebarVisible}
                   handleExtendSidebar={this.handleExtendSidebar}
                   theme={this.state.theme}
                   {...routerProps}

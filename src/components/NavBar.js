@@ -94,7 +94,7 @@ export default class NavBar extends Component {
                 style={this.props.theme==='light'?{color:'black'}:{color:'white'}}
                 onClick = {() => {this.props.handleExtendSidebar()}
               }>
-                My Info
+                {this.props.sidebarVisible ? "Close Info" : "My Info"}
               </Menu.Item>
               <Menu.Item
                 style={this.props.theme==='light'?{color:'black'}:{color:'white'}}>
