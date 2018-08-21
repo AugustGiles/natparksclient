@@ -59,8 +59,8 @@ class ParkDetails extends Component {
         "Content-Type": "application/json",
         Accept: "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`
-      }
-    })
+        }
+        })
       .then(res => res.json())
       .then(json => {
         this.props.getUsersFollowedParks([...this.props.followedParkIds,this.state.parkInfo.id])
@@ -69,15 +69,26 @@ class ParkDetails extends Component {
     }
 
     handleUserUnfollowPark = () => {
-        
+        fetch(`https://still-wildwood-14519.herokuapp.com/unfollow/${this.state.parkInfo.id}`, 
+        {method:"POST",
+        headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+        }
+        })
+      .then(res => res.json())
+      .then(json => {
+        this.props.getUsersFollowedParks(this.props.followedParkIds.filter(park=>park!==this.state.parkInfo.id))
+      });
     }
 
     renderFollowUnfollowParkButton = () => {
         if (this.props.loggedIn) {
             if (this.props.followedParkIds.includes(this.state.parkInfo.id)) {
-                return <Button color='red' onClick={this.handleUserFollowPark}>Unfollow Park</Button>
+                return <Button color='red' onClick={this.handleUserUnfollowPark}>Unfollow Park</Button>
             } else {
-                return <Button color='green' onClick={this.handleUserUnfollowPark}>Follow Park</Button>
+                return <Button color='green' onClick={this.handleUserFollowPark}>Follow Park</Button>
             }
         }
        

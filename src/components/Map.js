@@ -101,7 +101,7 @@ class Map extends Component {
               data-for={park.id}
               cx={0}
               cy={0}
-              r={this.state.zoom<=5?this.state.zoom:this.state.zoom/2.5}
+              r={this.state.zoom<=5?this.state.zoom:this.state.zoom/2}
               style={{
               stroke: "#2185d0",
               strokeWidth: 3,
