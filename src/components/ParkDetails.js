@@ -119,8 +119,6 @@ class ParkDetails extends Component {
             <Modal.Header>{parkInfo.full_name}</Modal.Header>
                 <Modal.Content image scrolling>
                     {parkInfo.image_sources &&
-                    {/*<Image wrapped size="medium" src={parkInfo.image_sources[this.state.imageIndex]}/>}
-                    <Modal.Description style={width:100%}>*/}
                     <Image wrapped size="massive" src={parkInfo.image_sources[this.state.imageIndex]}/>}
                     <Modal.Description style={{minWidth:'50%'}}>
                         <Menu attached='top' tabular>
@@ -150,3 +148,6 @@ class ParkDetails extends Component {
 }
 
 export default ParkDetails;
+
+// <Image wrapped size="medium" src={parkInfo.image_sources[this.state.imageIndex]}/>}
+// <Modal.Description style={width:100%}>
