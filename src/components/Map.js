@@ -124,7 +124,7 @@ class Map extends Component {
 
   renderTooltip = (park) => {
     return (<ReactTooltip key={`tooltip-${park.id}`} id={park.id.toString()}>
-      <span>{park.full_name}</span>
+      <span dangerouslySetInnerHTML={{__html: park.full_name }}></span>
     </ReactTooltip>)
   }
 
@@ -132,8 +132,8 @@ class Map extends Component {
 
 
         return (
-            <div 
-              className={this.props.sidebarVisible ? "map-container map-container-with-sidebar" : "map-container"} 
+            <div
+              className={this.props.sidebarVisible ? "map-container map-container-with-sidebar" : "map-container"}
               style={this.props.theme==='light'?{backgroundColor:'#DAE0E6'}:{backgroundColor:'#2c2d32'}}
               >
             <Motion
@@ -185,10 +185,10 @@ class Map extends Component {
                 </Motion>
                 {this.props.parkData.length!==0 && this.renderTooltips()}
                 <Button id="fab" circular icon={this.state.zoom ===1?"zoom in":"zoom out"} size="massive" color="blue" onClick={this.handleZoom}/>
-                <Button id="theme-button" 
+                <Button id="theme-button"
                     style={this.props.theme==='light'?
                       {backgroundColor:'#202124', color:'white'}:
-                      {backgroundColor:'#DAE0E6', color: 'black'}} circular 
+                      {backgroundColor:'#DAE0E6', color: 'black'}} circular
                     onClick={this.props.toggleTheme}>
                     {this.props.theme==='light'?'dark theme':'light theme'}
                 </Button>

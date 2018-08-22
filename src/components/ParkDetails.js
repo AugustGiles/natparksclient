@@ -116,7 +116,9 @@ class ParkDetails extends Component {
         const {parkInfo, events, alerts, tab} = this.state
         return (
         <React.Fragment >
-            <Modal.Header>{parkInfo.full_name}</Modal.Header>
+            <Modal.Header>
+              <span dangerouslySetInnerHTML={{__html: parkInfo.full_name }}></span>
+            </Modal.Header>
                 <Modal.Content image scrolling>
                     {parkInfo.image_sources &&
                       <Image wrapped size="large" src={parkInfo.image_sources[this.state.imageIndex]}/>}
