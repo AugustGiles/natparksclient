@@ -220,7 +220,7 @@ class App extends Component {
             </Modal>
           } />
           <Route exact path="/:park" render={routerProps =>
-            <Modal size="fullscreen" open closeIcon onClose={this.handleClose}>
+            <Modal size="large" open closeIcon onClose={this.handleClose}>
               <ParkDetails
                 {...routerProps}
                 loggedIn={this.state.loggedIn}
