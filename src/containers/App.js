@@ -172,6 +172,7 @@ class App extends Component {
                   handleExtendSidebar={this.handleExtendSidebar}
                   theme={this.state.theme}
                   logoutUser={this.logoutUser}
+                  
                   {...routerProps}
                 />
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "../css/NavBar.css";
 import { Menu, Search, Dropdown } from 'semantic-ui-react'
+import ReactTooltip from "react-tooltip"
 
 export default class NavBar extends Component {
   state = {
@@ -54,10 +55,10 @@ export default class NavBar extends Component {
     const {handleDesignationFilter, history} = this.props
 
     return (
-      <div className="NavBar" 
+      <div className="NavBar"
         style={this.props.theme==='light'?{backgroundColor:'white'}:{backgroundColor:'#202124'}}>
-        <Menu secondary size='huge'>
-          <Menu.Item header 
+        <Menu secondary size='huge' stackable>
+          <Menu.Item header
               style={this.props.theme==='light'?{color:'black'}:{color:'white'}}>
             Parks Map
           </Menu.Item>
@@ -79,6 +80,19 @@ export default class NavBar extends Component {
               onChange={ (e) => handleDesignationFilter(e)}
               selectOnBlur={false}
             />
+          <Menu.Item
+            icon="question circle outline"
+            data-tip
+            data-for='instructions'
+            style={{textAlign: 'left'}}
+            />
+          <ReactTooltip id='instructions'>
+
+              <span>Double click on states to zoom in.</span><br/>
+              <span>Click on park marker to see details.</span><br/>
+              <span>Create an account to keep up to date with your favorite parks.</span><br/>
+
+          </ReactTooltip>
           {!this.props.loggedIn  ?
             <Menu.Menu position='right'>
               <Menu.Item
@@ -93,7 +107,7 @@ export default class NavBar extends Component {
               <Menu.Item
                 style={this.props.theme==='light'?{color:'black'}:{color:'white'}}
                 onClick = {this.props.handleExtendSidebar}>
-                {this.props.sidebarVisible ? "Close Info" : "My Info"}
+                {this.props.sidebarVisible ? "Hide Info" : "My Info"}
               </Menu.Item>
               <Menu.Item
                 style={this.props.theme==='light'?{color:'black'}:{color:'white'}}
