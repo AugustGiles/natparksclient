@@ -19,7 +19,7 @@ class ParkDetails extends Component {
         }
     }
 
-    
+
     componentDidMount(){
         let parkId = this.props.match.params.park
         // Fetch park show page
@@ -53,7 +53,7 @@ class ParkDetails extends Component {
 
 
     handleUserFollowPark = () => {
-        fetch(`https://still-wildwood-14519.herokuapp.com/follow/${this.state.parkInfo.id}`, 
+        fetch(`https://still-wildwood-14519.herokuapp.com/follow/${this.state.parkInfo.id}`,
         {method:"POST",
         headers: {
         "Content-Type": "application/json",
@@ -65,12 +65,12 @@ class ParkDetails extends Component {
       .then(json => {
         this.props.getUsersFollowedParks([...this.props.followedParks,
             {id:this.state.parkInfo.id, name:this.state.parkInfo.full_name}])
-        
+
       });
     }
 
     handleUserUnfollowPark = () => {
-        fetch(`https://still-wildwood-14519.herokuapp.com/unfollow/${this.state.parkInfo.id}`, 
+        fetch(`https://still-wildwood-14519.herokuapp.com/unfollow/${this.state.parkInfo.id}`,
         {method:"POST",
         headers: {
         "Content-Type": "application/json",
@@ -92,9 +92,9 @@ class ParkDetails extends Component {
                 return <Button color='green' onClick={this.handleUserFollowPark}>Follow Park</Button>
             }
         }
-       
+
     }
-  
+
 
     componentWillUnmount(){
         clearInterval(this.interval)
@@ -112,18 +112,18 @@ class ParkDetails extends Component {
     }
     handleItemClick = (e, { name }) => this.setState({ tab: name })
 
-    render() { 
+    render() {
         const {parkInfo, events, alerts, tab} = this.state
         return (
         <React.Fragment >
             <Modal.Header>{parkInfo.full_name}</Modal.Header>
                 <Modal.Content image scrolling>
                     {parkInfo.image_sources &&
-                    <Image wrapped size="massive" src={parkInfo.image_sources[this.state.imageIndex]}/>}
-                    <Modal.Description>
+                    <Image wrapped size="medium" src={parkInfo.image_sources[this.state.imageIndex]}/>}
+                    <Modal.Description style={width:100%}>
                         <Menu attached='top' tabular>
-                            <Menu.Item 
-                                name='info' active={tab === 'info'} 
+                            <Menu.Item
+                                name='info' active={tab === 'info'}
                                 onClick={this.handleItemClick} />
                             <Menu.Item
                                 name='events'active={tab === 'events'}
@@ -140,11 +140,11 @@ class ParkDetails extends Component {
                         <Segment attached='bottom'>
                             {this.currentTab()}
                         </Segment>
-                        
+
                     </Modal.Description>
                 </Modal.Content>
         </React.Fragment>  );
     }
 }
- 
+
 export default ParkDetails;
